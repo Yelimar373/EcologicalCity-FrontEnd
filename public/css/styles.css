@@ -1,0 +1,10 @@
+/* Importa primero los estilos base */
+@import url('/css/base/_normalize.css');
+@import url('/css/base/_base.css');
+@import url('/css/base/_fonts.css');
+@import url('/css/base/_root.css');
+
+/* Importa los componentes */
+@import url('/css/components/_header.css');
+@import url('/css/components/_footer.css');
+@import url('/css/components/_utils.css');

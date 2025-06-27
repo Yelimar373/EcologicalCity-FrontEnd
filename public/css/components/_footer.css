@@ -1,0 +1,169 @@
+.main-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
+    padding: 60px 0 20px 0;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-section {
+    flex: 1;
+    min-width: 280px;
+    margin-bottom: 20px;
+}
+.footer-section h3 {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+.footer-section a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-section a:hover {
+    color: var(--color-secondary-orange);
+}
+.footer-about p {
+    max-width: 400px;
+}
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px; /* Tamaño del círculo del icono */
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--footer-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+.social-icon:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white-base);
+    transform: translateY(-3px); 
+}
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+}
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-bottom p {
+    margin: 5px 0;
+}
+.footer-newsletter .newsletter-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.footer-newsletter .newsletter-form input[type="email"] {
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--footer-text-color);
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.footer-newsletter .newsletter-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.footer-newsletter .newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px 0 var(--color-primary);
+}
+.newsletter-form .btn-primary-small {
+    background-color: var(--color-primary);
+    color: var(--color-white-base);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.newsletter-form .btn-primary-small:hover {
+    background-color: var(--color-secondary-orange);
+    transform: translateY(-2px);
+}
+@media (max-width: 992px) {
+    .main-footer {
+        padding: 50px 0 15px 0;
+    }
+    .footer-content {
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-section h3 {
+        font-size: 1.4rem;
+    }
+    .footer-newsletter .newsletter-form {
+        flex-direction: column; 
+    }
+}
+@media (max-width: 830px) {
+    .main-footer {
+        padding: 40px 0 10px 0;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        justify-content: space-around
+    }
+    .footer-section {
+        min-width: unset;
+        margin-bottom: 15px;
+    }
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+    .footer-about p {
+        max-width: unset;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding-top: 15px;
+    }
+    .footer-newsletter .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-newsletter .newsletter-form input[type="email"] {
+        width: 80%;
+    }
+    .newsletter-form .btn-primary-small {
+        width: 80%;
+    }
+}

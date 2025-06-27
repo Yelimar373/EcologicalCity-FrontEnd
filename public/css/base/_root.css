@@ -1,0 +1,14 @@
+:root {
+    --color-primary: #0bab11; /* Verde vibrante */
+    --color-secondary-orange: #ff840f; /* Naranja brillante */
+    --color-secondary-brown: #964b00; /* Marrón oscuro/tierra */
+    --color-white-base: #ebebe9; /* Blanco ligeramente roto */
+    --color-black-base: #131314; /* Negro casi puro */
+    /* Colores para texto y fondo basados*/
+    --text-color: var(--color-black-base);
+    --background-color: var(--color-white-base);
+    --header-bg: var(--color-black-base); /* Fondo del header */
+    --header-link-color: var(--color-white-base);
+    --footer-bg: var(--color-black-base); /* Fondo del footer */
+    --footer-text-color: var(--color-white-base);
+}

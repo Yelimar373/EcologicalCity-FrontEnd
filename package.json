@@ -4,7 +4,9 @@
   "description": "Proyecto Web sobre el desarrollo sostenible y sustentable",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/Yelimar373/EcologicalCity-FrontEnd/issues"
   },
-  "homepage": "https://github.com/Yelimar373/EcologicalCity-FrontEnd#readme"
+  "homepage": "https://github.com/Yelimar373/EcologicalCity-FrontEnd#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }

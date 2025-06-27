@@ -1,0 +1,525 @@
+/* --- Hero Section --- */
+.hero-section {
+    background-image: url('../../../assets/img/EcologicalCity\(3\).png'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--color-white-base);
+    padding-bottom: 50px;
+    text-align: center;
+    text-shadow: 0 0 5px var(--text-color);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;    
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #000, transparent);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--color-white-base);
+}
+.hero-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-white-base);
+}
+.hero-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: var(--color-white-base);
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+/* --- Section ZigZag --- */
+.section-zigzag {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+.section-challenge h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-color);
+}
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.content-block:last-child {
+    margin-bottom: 0;
+    flex-direction: row-reverse;
+}
+.content-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+.content-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.content-text {
+    flex: 1;
+}
+.content-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+/* --- Section Card´s --- */
+.section-ludic-proposal {
+    padding: 80px 0;
+    background-color: var(--color-white-base);
+}
+.section-ludic-proposal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.section-ludic-proposal .max-width-p {
+    max-width: 800px; 
+    margin: 0 auto 60px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-game-difference {
+    padding: 80px 0;
+    background-color: var(--background-color); /* O un color de fondo ligeramente distinto para variar */
+}
+
+.section-game-difference h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.section-game-difference .max-width-p {
+    max-width: 900px; /* Ancho máximo para los párrafos introductorios/finales */
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px auto;
+    max-width: 900px;
+}
+.comparison-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid;
+}
+/* Estilos específicos para el item 'problem' (Juegos Tradicionales) */
+.comparison-item.problem h3 {
+    color: var(--color-secondary-orange);
+    border-color: var(--color-secondary-orange);
+}
+/* Estilos específicos para el item 'solution' (EcologicalCity) */
+.comparison-item.solution h3 {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.comparison-item ul li {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-color);
+}
+/* Viñetas personalizadas para las listas */
+.comparison-item.problem ul li::before {
+    content: '\2716';
+    color: var(--color-secondary-orange);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.comparison-item.solution ul li::before {
+    content: '\2714';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    margin-right: 10px;
+}
+/* --- Section Split --- */
+.section-split-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 80px auto;
+    min-height: 500px;
+    max-width: 1400px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.4);
+}
+.split-content-text {
+    flex: 1; 
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--color-white-base);
+    color: var(--text-color);
+}
+.text-block h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+.text-block p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+.split-content-image {
+    flex: 1;
+    background-image: url('../assets/img/parallax-bg.jpg');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.cta-button-container {
+    margin-top: 60px;
+}
+/* --- Section Card´s: Explore More --- */
+.section-explore-more {
+    padding: 80px 0;
+    background-color: var(--background-color);
+    text-align: center;
+}
+.section-explore-more h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-color);
+}
+.explore-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.explore-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 40px 30px;
+    border-radius: 10px;
+    position: relative; 
+    overflow: hidden; 
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.explore-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+    z-index: 1;
+}
+.explore-link:hover::before {
+    width: 100%;
+}
+.explore-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+.explore-link:hover:after{
+    background-color: var(--color-primary);
+    opacity: .5;
+}
+.explore-link:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra muy sutil al levantar */
+}
+
+.link-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-orange); /* Usamos el naranja para los iconos aquí para variar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.link-icon {
+    width: 35px;
+    height: 35px;
+    color: var(--color-white-base);
+    stroke: var(--color-white-base);
+}
+
+.explore-link h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.explore-link p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.link-cta {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex; /* Para alinear el texto y la flecha */
+    align-items: center;
+    gap: 5px; /* Espacio entre texto y flecha */
+}
+
+.link-cta::after { /* Flecha animada */
+    content: '\2192'; /* Código para flecha derecha */
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.explore-link:hover .link-cta {
+    color: var(--color-secondary-orange);
+}
+
+.explore-link:hover .link-cta::after {
+    transform: translateX(5px); /* La flecha se mueve al pasar el mouse */
+}
+/* --- Media Queries --- */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 50px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+    .section-challenge {
+        padding: 60px 0;
+    }
+    .section-challenge h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .content-block {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .content-text p {
+        font-size: 1rem;
+    }
+    .section-ludic-proposal {
+        padding: 60px 0;
+    }
+    .section-ludic-proposal h2 {
+        font-size: 2rem;
+    }
+    .section-ludic-proposal .max-width-p {
+        margin-bottom: 40px;
+    }
+    .section-game-difference {
+        padding: 60px 0;
+    }
+    .section-game-difference h2 {
+        font-size: 2rem;
+    }
+    .section-game-difference .max-width-p {
+        margin-bottom: 20px;
+    }
+    .comparison-grid {
+        gap: 30px;
+        margin: 40px auto;
+    }
+    .comparison-item {
+        padding: 30px;
+    }
+    .comparison-item h3 {
+        font-size: 1.6rem;
+    }
+    .section-split-content {
+        flex-direction: column;
+        margin: 60px 0;
+        min-height: unset;
+        border-radius: 8px;
+    }
+    .split-content-text {
+        padding: 40px 30px;
+        gap: 20px;
+    }
+    .text-block h4 {
+        font-size: 1.5rem;
+    }
+    .text-block p {
+        font-size: 1rem;
+    }
+    .split-content-image {
+        min-height: 300px;
+        background-size: cover;
+    }
+    .cta-button-container {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 800px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section h2 {
+        font-size: 1.3rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-challenge {
+        padding: 40px 0;
+    }
+    .section-challenge h2 {
+        font-size: 1.8rem;
+    }
+    .content-block {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .content-image {
+        min-width: unset;
+        width: 100%;
+    }
+    .content-image img {
+        margin: 0 auto;
+    }
+    .section-ludic-proposal {
+        padding: 40px 0;
+    }
+    .section-ludic-proposal h2 {
+        font-size: 1.8rem;
+    }
+    .feature-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    .feature-card {
+        padding: 25px;
+    }
+    .section-game-difference {
+        padding: 40px 0;
+    }
+    .section-game-difference h2 {
+        font-size: 1.8rem;
+    }
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 30px auto;
+    }
+    .comparison-item {
+        padding: 25px;
+    }
+    .comparison-item h3 {
+        font-size: 1.5rem;
+    }
+    .section-split-content {
+        margin: 40px 0;
+        border-radius: 5px;
+    }
+    .split-content-text {
+        padding: 30px 20px;
+    }
+    .text-block h4 {
+        font-size: 1.3rem;
+    }
+    .split-content-image {
+        min-height: 250px;
+    }
+    .cta-button-container {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .hero-section h2 {
+        font-size: 1.1rem;
+    }
+}

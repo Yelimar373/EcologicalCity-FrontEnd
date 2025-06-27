@@ -1,0 +1,23 @@
+<header class="main-header">
+    <div class="nav-overlay"></div>
+    <div class="container header-content">
+        <a href="index.html" class="logo">
+            <span>EcologicalCity</span>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/" <%= currentPage === 'landing' ? 'class="active"' : '' %> >Inicio</a></li>
+                <li><a href="/the-game" <%= currentPage === 'the-game' ? 'class="active"' : '' %>>El Juego</a></li>
+                <li><a href="/news" <%= currentPage === 'news' ? 'class="active"' : '' %>>Tecnología y Avances</a></li>
+                <li><a href="/glosary" <%= currentPage === 'glosary' ? 'class="active"' : '' %>>Glosario</a></li>
+                <li><a href="/about" <%= currentPage === 'about' ? 'class="active"' : '' %>>Acerca de</a></li>
+                <li><a href="/contact" <%= currentPage === 'contact' ? 'class="active"' : '' %>>Contacto</a></li> </ul>
+            </ul>
+        </nav>
+        <button class="nav-toggle " aria-label="Abrir menú de navegación">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        </button>
+    </div>
+</header>
