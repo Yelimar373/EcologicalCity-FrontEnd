@@ -25,17 +25,25 @@ app.get('/', (req, res) => {
     //res.sendFile(path.join(__dirname, 'public', 'pages','index.html'));
     res.render('index');
 });
-
 // Ruta para la página "Acerca de" (/about)
-// Esto logra la URL amigable: http://localhost:3000/about
-app.get('/news', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'pages', 'news.html'));
+app.get('/about', (req, res) => {
+    res.render('about');
 });
-
-// 9. Ruta para la página "Contacto" (/contact)
-// Esto logra la URL amigable: http://localhost:3000/contact
+// Ruta para la página "Contacto" (/contact)
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.render('contact');
+});
+// Ruta para la página "Acerca de" (/about)
+app.get('/glosary', (req, res) => {
+    res.render('glosary');
+});
+// Ruta para la página "Tecnología y Avances" (/news)
+app.get('/news', (req, res) => {
+    res.render('news');
+});
+// Ruta para la página "El Juego" (/the-game)
+app.get('/the-game', (req, res) => {
+    res.render('the-game');
 });
 
 // --- Manejo de Errores  ---

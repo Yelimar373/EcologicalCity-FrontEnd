@@ -1,6 +1,6 @@
 /* --- Hero Section --- */
 .hero-section {
-    background-image: url('../../../assets/img/EcologicalCity\(3\).png'); 
+    background-image: url('/assets/img/EcologicalCity\(3\).png'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -124,13 +124,11 @@
     padding: 80px 0;
     background-color: var(--background-color); /* O un color de fondo ligeramente distinto para variar */
 }
-
 .section-game-difference h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--text-color);
 }
-
 .section-game-difference .max-width-p {
     max-width: 900px; /* Ancho máximo para los párrafos introductorios/finales */
     margin: 0 auto 30px auto;
@@ -221,7 +219,7 @@
 }
 .split-content-image {
     flex: 1;
-    background-image: url('../assets/img/parallax-bg.jpg');
+    background-image: url('/assets/img/parallax-bg.jpg');
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;

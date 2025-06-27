@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario - EcologicalCity</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pages/glosary.css">
+</head>
+<body>
+    <%- include('partials/header', { currentPage: 'about' }) %>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Glosario de Términos Ambientales</h1>
+                <p>Explora y comprende los conceptos clave de la sostenibilidad y el proyecto EcologicalCity.</p>
+            </div>
+        </section>
+
+        <section class="glosary-section container">
+            <div class="glosary-controls">
+                <input type="text" id="searchInput" placeholder="Buscar concepto..." aria-label="Buscar concepto en el glosario">
+                <div class="alphabet-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="A">A</button>
+                    <button class="filter-btn" data-filter="B">B</button>
+                    </div>
+            </div>
+
+            <div class="glosary-content-area">
+                <ul id="glosaryTermsList" class="glosary-terms-list">
+                    <li data-term-id="biodiversidad">Biodiversidad</li>
+                    <li data-term-id="huella-carbono">Huella de Carbono</li>
+                    <li data-term-id="sostenibilidad">Sostenibilidad</li>
+                </ul>
+
+                <div id="glosaryDefinitionDisplay" class="glosary-definition-display">
+                    <h2>Selecciona un término para ver su definición</h2>
+                    <p>Utiliza la barra de búsqueda o el filtro alfabético para encontrar lo que necesitas.</p>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/footer', { currentPage: 'glosary' }) %>
+    <script src="/js/script.js"></script>
+    <script src="/js/glosary.js"></script>
+</body>
+</html>

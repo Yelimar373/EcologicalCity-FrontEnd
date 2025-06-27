@@ -24,6 +24,7 @@
             <p>Email: <a href="mailto:info@ecologicalcity.com">info@ecologicalcity.com</a></p>
             <p>Soporte: <a href="mailto:support@ecologicalcity.com">support@ecologicalcity.com</a></p>
         </div>
+        <% if (currentPage !== 'contact') { %>
         <div class="footer-section footer-newsletter">
             <h3>Suscríbete a Novedades</h3>
             <p>Mantente al día con las últimas noticias y actualizaciones de EcologicalCity.</p>
@@ -33,6 +34,7 @@
                 <button type="submit" class="btn btn-primary-small">Suscribirse</button>
             </form>
         </div>
+        <% } %>
         </div>
     <div class="footer-bottom">
         <p>&copy;<span><%= new Date().getFullYear() %></span> EcologicalCity. Todos los derechos reservados.</p>
