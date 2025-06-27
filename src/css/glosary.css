@@ -1,0 +1,189 @@
+/* Importa tus variables y fuentes si es necesario, aunque styles.css ya lo hace */
+
+/* --- Hero Página Glosario (similar a contact.css) --- */
+.page-hero {
+    background-color: var(--color-black-base);
+    color: var(--color-white-base);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Overlay sutil */
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--color-white-base);
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--color-white-base);
+    opacity: 0.9;
+}
+
+/* --- Sección Principal del Glosario --- */
+.glosary-section {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column; /* Por defecto, apilado en móvil */
+    gap: 40px;
+}
+
+.glosary-controls {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchInput {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-grow: 1; /* Permite que la barra de búsqueda ocupe espacio */
+    max-width: 400px; /* Ancho máximo para la barra de búsqueda */
+}
+
+.alphabet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.alphabet-filter .filter-btn {
+    background-color: var(--color-white-base);
+    color: var(--color-black-base);
+    border: 1px solid var(--color-primary);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alphabet-filter .filter-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white-base);
+}
+
+.alphabet-filter .filter-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-white-base);
+    border-color: var(--color-primary);
+}
+
+.glosary-content-area {
+    display: flex;
+    gap: 40px;
+}
+
+.glosary-terms-list {
+    flex: 1; /* Ocupa una parte del espacio disponible */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 600px; /* Altura máxima con scroll si hay muchos términos */
+    overflow-y: auto;
+    border-right: 1px solid #eee; /* Separador visual */
+    padding-right: 30px;
+}
+
+.glosary-terms-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.glosary-terms-list li:last-child {
+    border-bottom: none;
+}
+
+.glosary-terms-list li:hover,
+.glosary-terms-list li.active {
+    background-color: rgba(var(--color-primary-rgb, 11, 171, 17), 0.1); /* Ligero verde de fondo */
+    color: var(--color-primary);
+    padding-left: 10px; /* Efecto visual al seleccionar */
+}
+
+.glosary-definition-display {
+    flex: 2; /* Ocupa más espacio, ideal para la definición */
+    padding-left: 30px;
+}
+
+.glosary-definition-display h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.glosary-definition-display p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* --- Media Queries para Responsive Design (ajustar según tus breakpoints) --- */
+@media (max-width: 992px) {
+    .glosary-content-area {
+        flex-direction: column; /* Apila la lista y la definición en pantallas pequeñas */
+        gap: 30px;
+    }
+
+    .glosary-terms-list {
+        border-right: none;
+        border-bottom: 1px solid #eee; /* Separador horizontal */
+        padding-right: 0;
+        padding-bottom: 20px;
+        max-height: 400px; /* Ajusta la altura máxima para la lista en móvil */
+    }
+
+    .glosary-definition-display {
+        padding-left: 0;
+        text-align: center; /* Centra el texto de la definición en móvil */
+    }
+
+    #searchInput {
+        width: 100%;
+        max-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .glosary-section {
+        padding: 50px 0;
+    }
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    .page-hero p {
+        font-size: 1rem;
+    }
+}
