@@ -97,34 +97,8 @@
 .contact-info .info-item a:hover {
     color: var(--color-primary);
 }
-.social-links-contact {
+.social-links {
     margin-top: 30px;
-}
-.social-links-contact h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--color-primary);
-}
-.social-links-contact .social-icon-contact {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-    color: var(--color-white-base);
-    margin-right: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.social-links-contact .social-icon-contact:hover {
-    background-color: var(--color-secondary-orange);
-    transform: translateY(-3px);
-}
-.social-links-contact .social-icon-contact svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
 }
 /* --- Estilos del Formulario --- */
 .contact-form-wrapper {
