@@ -87,10 +87,7 @@
 .social-icons a:hover {
     background-color: var(--color-primary);
     transform: translateY(-3px);
-}
-.social-icons.icon-secondary a{
-    background-color: var(--color-primary);
-}
+} 
 .social-icons.icon-secondary a:hover{
     background-color: var(--color-secondary-orange);
 }
