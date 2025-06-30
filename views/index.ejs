@@ -13,40 +13,16 @@
         <!--Hero Section-->
         <section class="hero-section">
             <div class="container hero-content">
-                <h1>EcologicalCity: El Futuro Sostenible en Tus Manos</h1>
+                <h1>EcologicalCity:<br><span class="ghost-text"><span id="typed-slogan"></span>El Futuro Sostenible en Tus Manos</span></h1>
                 <h2>Transformando la conciencia ambiental a través de la innovación, la tecnología y el poder del juego.</h2>
-                <p>Descubre cómo el cuidado del ambiente no es una obligación, sino una vía eficiente para el desarrollo económico, tecnológico y social. Conoce un nuevo paradigma de aprendizaje.</p>
                 <div class="hero-buttons">
                     <a href="/about" class="btn btn-primary">Explorar el Proyecto</a>
                     <a href="/the-game" class="btn btn-secondary">Descubre el Juego</a>
                 </div>
             </div>
         </section>
-        <!--Section ZigZag: Desafio Global-->
-        <section class="section-zigzag">
-        <div class="container">
-            <h2 class="text-center">El Desafío Global: El Agotamiento de los Recursos Naturales</h2>
-            <div class="content-block">
-                <div class="content-image">
-                    <img src="/assets/img/EcologicalCity(4).png" alt="Ilustración de la deforestación o escasez de recursos">
-                </div>
-                <div class="content-text">
-                    <p>El agotamiento de los recursos naturales ha sido un tema discutido por años, y hoy observamos sus devastadores efectos. A pesar de los esfuerzos y los métodos de enseñanza tradicionales para generar conciencia y buenas prácticas de consumo, no se ha logrado la eficacia necesaria para revertir estos impactos tan negativos.</p>
-                </div>
-            </div>
-            <div class="content-block">
-                <div class="content-image">
-                    <img src="/assets/img/EcologicalCity.png" alt="Ilustración de un enfoque sostenible o ciudad verde">
-                </div>
-                <div class="content-text">
-                    <p>En EcologicalCity, reconocemos el daño ya infligido al medio ambiente y asumimos el deber moral de repararlo. Pero nuestra visión va más allá: buscamos que las generaciones nacientes y futuras adopten un paradigma distinto, viendo los beneficios tangibles de comportamientos y actitudes compatibles con el desarrollo sostenible.</p>
-                    <p>Queremos que el cuidado del ambiente sea percibido no como una tarea tediosa y obligatoria, sino como una oportunidad estratégica para el desarrollo económico, tecnológico y social.</p>
-                </div>
-            </div>
-        </div>
-        </section>
         <!-- Section Card's: Nuestra Propuesta -->
-        <section class="section-ludic-proposal">
+    <section class="section-ludic-proposal">
         <div class="container">
             <h2 class="text-center">Innovación y Conciencia: El Poder de los Videojuegos</h2>
             <p class="text-center max-width-p">En un mundo donde la interacción digital es clave, EcologicalCity propone un enfoque fresco. Si bien no pretendemos menospreciar ni reemplazar los métodos de enseñanza tradicionales, que demuestran tener resultados, proponemos complementarlos desde perspectivas innovadoras.</p>
@@ -77,6 +53,32 @@
                 <a href="about.html" class="btn btn-primary">Conoce el Enfoque de EcologicalCity</a>
             </div>
         </div>
+    </section>
+    <!--Section ZigZag: Desafio Global-->
+    <section class="section-zigzag">
+            <div class="container">
+                <h2 class="text-center">El Desafío Global: El Agotamiento de los Recursos Naturales</h2>
+                <div class="content-block">
+                    <div class="content-image content-image-left">
+                        <img src="/assets/img/recursos.png" alt="Imagen de recursos naturales agotándose">
+                    </div>
+                    <div class="content-text content-text-right">
+                        <h3>La Realidad que Enfrentamos</h3>
+                        <p>Nuestro planeta se enfrenta a una crisis sin precedentes. La sobreexplotación de recursos naturales, la contaminación y el cambio climático amenazan nuestro futuro. Cada año, consumimos más de lo que la Tierra puede regenerar, dejando una huella ecológica insostenible.</p>
+                        <p>Esta problemática afecta a todos, desde la escasez de agua potable hasta la pérdida de biodiversidad, pasando por fenómenos meteorológicos extremos. Es un desafío que requiere un cambio de mentalidad y acciones urgentes a nivel global y local.</p>
+                    </div>
+                </div>
+                <div class="content-block reverse">
+                    <div class="content-image content-image-right">
+                        <img src="/assets/img/impacto-social.png" alt="Imagen de impacto social ambiental">
+                    </div>
+                    <div class="content-text content-text-left">
+                        <h3>Impacto en la Sociedad y el Futuro</h3>
+                        <p>El agotamiento de los recursos no es solo un problema ambiental, sino también social y económico. Genera desigualdades, conflictos y migración. Sin un cambio significativo en nuestras prácticas, las generaciones futuras heredarán un mundo con menos oportunidades y mayores desafíos.</p>
+                        <p>En EcologicalCity, buscamos que entiendas estas interconexiones, mostrando cómo tus decisiones pueden ser parte de la solución, fomentando la construcción de comunidades resilientes y sostenibles.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Section Card's: El Juego que Marca la Diferencia -->
         <section class="section-game-difference">
@@ -148,5 +150,7 @@
     </section>
     </main>
     <%- include('partials/footer', { currentPage: 'landing' }) %>
-    <script src="/js/script.js"></script> </body>
+    <script src="/js/pages/index.js" type="module"></script>
+    <script src="/js/script.js"></script>
+</body>
 </html>

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.main-nav ul li a');
     const navOverlay = document.querySelector('.nav-overlay');
-
     if (navToggle && mainNav && navOverlay) {
         navToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');

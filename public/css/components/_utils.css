@@ -7,10 +7,13 @@
     font-weight: 600;
     text-align: center;
     text-shadow: 0 0 8px var(--text-color);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, transform 0.2s ease-out;
     border: 2px solid transparent;
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 .btn-primary {
     background-color: var(--color-primary);
@@ -18,10 +21,12 @@
     border-color: var(--color-primary);
 }
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--color-primary);
+    color: var(--color-white-base);
     border-color: var(--color-primary);
-    text-shadow: 0 0 8px var(--color-primary);
+    box-shadow: 0 0 10px rgba(11, 171, 17, 0.6), /* Sombra más suave y color primario */
+                0 0 20px rgba(11, 171, 17, 0.4);
+    transform: translateY(-3px) scale(1.02); /* Efecto de "pulse" y elevación */
+    text-shadow: 0 0 10px var(--color-primary); /* Intensifica el text-shadow con el color primario */
 }
 .btn-secondary {
     background-color: var(--color-secondary-orange);
@@ -29,34 +34,46 @@
     border-color: var(--color-secondary-orange);
 }
 .btn-secondary:hover {
-    background-color: transparent;
-    color: var(--color-secondary-orange);
+    color: var(--color-white-base);
     border-color: var(--color-secondary-orange);
-    text-shadow: 0 0 8px var(--color-secondary-orange); 
+    /* Nuevo efecto de glow */
+    box-shadow: 0 0 10px rgba(255, 132, 15, 0.6), /* Sombra más suave y color secundario */
+                0 0 20px rgba(255, 132, 15, 0.4);
+    transform: translateY(-3px) scale(1.02); /* Efecto de "pulse" y elevación */
+    text-shadow: 0 0 10px var(--color-secondary-orange); /* Intensifica el text-shadow con el color secundario */
 }
+
 /* --- Card's ---- */
 .card{
     background-color: var(--color-white-base);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.4); 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .card:hover{
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 25px var(--color-secondary-brown);
 }
+.card img,
+.card svg{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 25px;
+}
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--text-color);
     text-align: center;
 }
 .card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.7;
+    text-align: left;
+    text-wrap: pretty;
     color: var(--text-color);
 }
 .card ul{
@@ -64,6 +81,7 @@
     padding: 0;
     margin: 0;
 }
+
 /* Social Links */
 .social-links{
     display: inline-block;
@@ -94,6 +112,10 @@
 .social-links img {
     width: 50px;
     stroke: currentColor;
+}
+.ghost-text {
+    color: transparent;
+    text-shadow: none;
 }
 @media (max-width: 830px) {
     .btn {

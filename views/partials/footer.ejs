@@ -11,7 +11,6 @@
             <p>Email: <a href="mailto:info@ecologicalcity.com">info@ecologicalcity.com</a></p>
             <p>Soporte: <a href="mailto:support@ecologicalcity.com">support@ecologicalcity.com</a></p>
         </div>
-        <% if (currentPage !== 'contact') { %>
         <div class="footer-section footer-newsletter">
             <h3>Suscríbete a Novedades</h3>
             <p>Mantente al día con las últimas noticias y actualizaciones de EcologicalCity.</p>
@@ -21,7 +20,7 @@
                 <button type="submit" class="btn btn-primary-small">Suscribirse</button>
             </form>
         </div>
-        <% } %>
+        <!-- Te voy a dar el contexto de como estoy trabajando para que estemos en sincronía respecto a herramientas. Es el frontend, no tan super desarrollado aún pero si con bases solidas, hacemos uso de express para crear y administrar nuestro servidor, sirviendo los archivos estáticos y las páginas webs con urls amigables y evitando los huecos de seguridad, de igual manera que tenemos nodemon para nuestra fase de desarrollo; no estamos haciendo uso de ningún framework para el diseño, tenemos .ejs para la reutilización de código HTML además de CSS y JS nativo, todo bien modularizado (creo); por otro lado, paletas de colores definidas al igual que fuentes tipográficas descargadas en nuestro directorio. Cabe aclarar que somos estudiantes universitarios los que estamos desarrollando este proyecto por lo que es un proceso de desarrollo y aprendizaje al mismo tiempo. Te voy a pasar junto con este mensaje los ejs en documentos de extensión .html ya que los .ejs no se pueden subir, pero velos como ejs (que es poco lo que hay de ejs, sigue siendo prácticamente html), para que entiendas la structura web que hasta ahora tenemos y más importante de que trata nuestra web que lo tenemos definido en el index.ejs que sirve de landding page, luego de este análisis te parece el css y js; aunque te adelanto que la ayuda que te quiero pedir es en el rediseño de la página  -->
         </div>
     <div class="footer-bottom">
         <p>&copy;<span><%= new Date().getFullYear() %></span> EcologicalCity. Todos los derechos reservados.</p>
