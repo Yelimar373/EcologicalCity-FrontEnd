@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Yelimar373/EcologicalCity-FrontEnd#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   },

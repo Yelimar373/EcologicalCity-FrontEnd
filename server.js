@@ -13,6 +13,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // --- Servir Archivos Estáticos  ---
+// Middleware para servir archivos estáticos desde la carpeta 'node_modules'
+// Para librerias como AOS
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 // Middleware para servir archivos estáticos desde la carpeta 'public'
 // Cuando el navegador solicite un archivo como /css/style.css, Express lo buscará en public/css/style.css
 app.use(express.static(path.join(__dirname, 'public')));

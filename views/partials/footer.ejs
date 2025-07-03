@@ -24,6 +24,9 @@
         </div>
     <div class="footer-bottom">
         <p>&copy;<span><%= new Date().getFullYear() %></span> EcologicalCity. Todos los derechos reservados.</p>
-        <p>Construyendo un futuro verde con la fuerza de la comunidad.</p>
+        <p>Construyendo un futuro verde con la fuerza de la comunidad.</p>    
+        <% if (atrribution) { %>
+            <%- atrribution %>
+        <% } %>
     </div>
 </footer>

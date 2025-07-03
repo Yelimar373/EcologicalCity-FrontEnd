@@ -52,10 +52,6 @@
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.4); 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.card:hover{
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 8px 25px var(--color-secondary-brown);
-}
 .card img,
 .card svg{
     width: 90px;

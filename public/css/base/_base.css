@@ -21,6 +21,38 @@ a {
 a:hover {
   color: var(--color-secondary-orange);
 }
+/* --- Estilos para <strong> (fuerte) --- */
+strong {
+    font-weight: bolder;
+    color: var(--color-secondary-orange);
+    /* text-shadow: 0 0 3px rgba(11, 171, 17, 0.4);  Un sutil "glow" verde */
+}
+/* --- Estilos para <em> (énfasis) --- */
+em {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--color-secondary-brown);
+    /* text-shadow: 0 0 2px rgba(255, 132, 15, 0.3); Un sutil "glow" naranja */
+}
+/* --- Estilos combinados (cuando una palabra es "fuerte" Y "enfatizada") --- */
+strong em,
+em strong {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--color-white-base);
+    background-color: var(--color-black-base);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+/* Estilo para enlaces fuertes */
+a strong {
+    color: inherit;
+    text-decoration: underline;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
