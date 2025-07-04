@@ -1,6 +1,8 @@
 :root {
     --color-primary: #0bab11; /* Verde vibrante */
+    --color-primary-rgb: 11, 171, 17;
     --color-secondary-orange: #ff840f; /* Naranja brillante */
+    --color-secondary-orange-rgb: 255, 132, 15;
     --color-secondary-brown: #964b00; /* Marrón oscuro/tierra */
     --color-white-base: #ebebe9; /* Blanco ligeramente roto */
     --color-black-base: #131314; /* Negro casi puro */
