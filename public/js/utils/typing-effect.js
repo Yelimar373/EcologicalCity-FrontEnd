@@ -1,6 +1,6 @@
 export function typingEffect (typedElement, textToType, callbackAnimation){
     let charIndex = 0;
-    let typingSpeed = 80;
+    let typingSpeed = 60;
     function typeText() {
         if (charIndex == textToType.length) {
             callbackAnimation(typedElement);

@@ -6,6 +6,7 @@
     --color-secondary-brown: #964b00; /* Marrón oscuro/tierra */
     --color-white-base: #ebebe9; /* Blanco ligeramente roto */
     --color-black-base: #131314; /* Negro casi puro */
+    --color-black-base-rgb: 19, 19, 20;
     /* Colores para texto y fondo basados*/
     --text-color: var(--color-black-base);
     --background-color: var(--color-white-base);
