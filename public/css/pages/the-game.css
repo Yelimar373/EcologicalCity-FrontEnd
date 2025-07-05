@@ -1,0 +1,386 @@
+/* Importa tus variables y fuentes si es necesario, aunque styles.css ya lo hace */
+
+/* ==========================================================================
+   1. Hero Section Específico para 'El Juego'
+   ========================================================================== */
+.game-hero {
+    background-image: url("/assets/img/the-game/hero-concept.avif"); /* Placeholder - Reemplaza con tu imagen conceptual del juego */
+    background-image: image-set(
+        url("/assets/img/the-game/hero-concept.avif") type("image/avif"),
+        url('/assets/img/the-game/hero-concept.webp') type('image/webp'),
+        url('/assets/img/the-game/hero-concept.png') type('image/png')
+    );
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--color-white-base);
+    min-height: 80vh; /* Un poco menos alto que el de la landing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Efecto de superposición para integrar con el header/footer y mejorar legibilidad */
+}
+
+.game-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Combinación de gradientes para un efecto más técnico/futurista */
+    background-image:
+        linear-gradient(to bottom, rgba(var(--color-black-base-rgb), 0.8) 0%, transparent 40%),
+        linear-gradient(to top, rgba(var(--color-black-base-rgb), 0.8) 0%, transparent 40%),
+        linear-gradient(to right, rgba(var(--color-black-base-rgb), 0.3) 0%, transparent 100%),
+        linear-gradient(to left, rgba(var(--color-black-base-rgb), 0.3) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.game-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+    animation: fadeInScale 1s ease-out forwards; /* Animación de entrada */
+}
+
+.game-hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--color-white-base);
+    text-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.8); /* Sombra para resaltar */
+}
+
+.game-hero h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--color-white-base);
+    opacity: 0.9;
+    text-shadow: 0 0 8px rgba(var(--color-black-base-rgb), 0.5);
+}
+
+/* Animación para el Hero */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   2. Índice de Contenido del Juego
+   ========================================================================== */
+.game-content-index {
+    background-color: var(--background-color);
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(var(--color-black-base-rgb), 0.1);
+    box-shadow: 0 2px 10px rgba(var(--color-black-base-rgb), 0.05);
+}
+
+.index-nav {
+    max-width: 1200px; /* Ancho máximo para el índice */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.index-nav h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.index-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para una navegación horizontal en desktop */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los elementos principales */
+}
+
+.index-nav ul li {
+    position: relative;
+}
+
+.index-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: var(--color-white-base);
+    color: var(--text-color);
+    border: 1px solid rgba(var(--color-black-base-rgb), 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Evita que los ítems se rompan en varias líneas */
+}
+
+.index-nav ul li a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white-base);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* Sub-ítems del índice (para "Mecánicas de Juego Clave") */
+.index-nav ul ul {
+    display: none; /* Ocultar por defecto, se mostrará en hover/focus o en móvil */
+    position: absolute;
+    top: 100%; /* Debajo del elemento padre */
+    left: 0;
+    background-color: var(--background-color);
+    border: 1px solid rgba(var(--color-black-base-rgb), 0.15);
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 5;
+    flex-direction: column; /* Apilar los sub-ítems */
+}
+
+.index-nav ul li:hover > ul {
+    display: flex; /* Mostrar sub-ítems al hacer hover en el padre */
+}
+
+.index-nav ul ul li {
+    margin: 0; /* Eliminar margen de los ítems principales */
+}
+
+.index-nav ul ul li a {
+    padding: 8px 15px;
+    border: none; /* Eliminar borde para sub-ítems */
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.index-nav ul ul li a:hover {
+    background-color: rgba(var(--color-primary-rgb), 0.1);
+    color: var(--color-primary);
+    transform: none; /* Sin transformación para sub-ítems */
+    box-shadow: none;
+}
+
+
+/* ==========================================================================
+   3. Estilos Generales para las Secciones de Contenido del Juego
+   ========================================================================== */
+.game-section {
+    padding: 80px 0; /* Padding superior e inferior para todas las secciones */
+}
+
+.game-section:nth-child(even) { /* Para dar un fondo diferente a secciones alternas si se desea */
+    background-color: var(--color-white-base);
+}
+
+.game-section h2 {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.game-section h2::after { /* Línea decorativa bajo los títulos */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secondary-orange);
+    border-radius: 2px;
+}
+
+.game-section h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.game-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /* Justificar texto para una lectura más formal */
+}
+
+.game-section ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 1em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color);
+}
+
+.game-section ul li {
+    margin-bottom: 0.8em;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Estilos para los bloques de mecánicas individuales */
+.game-mechanic-block {
+    background-color: var(--color-white-base);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.08);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--color-primary); /* Borde decorativo */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.game-mechanic-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(var(--color-black-base-rgb), 0.12);
+}
+
+.game-mechanic-block h3 {
+    color: var(--color-secondary-orange); /* Un color diferente para los títulos de subsección */
+    margin-top: 0;
+    text-align: left; /* Alineación a la izquierda para los títulos de bloque */
+}
+
+.game-mechanic-block p {
+    text-align: left; /* Asegurar justificación en los bloques */
+}
+
+/* Estilos para los botones del Quiz/Encuesta */
+#challenge .btn-primary, #challenge .btn-secondary {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* ==========================================================================
+   4. Media Queries (Responsive Design)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .game-hero {
+        min-height: 60vh;
+    }
+    .game-hero h1 {
+        font-size: 2.8rem;
+    }
+    .game-hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .index-nav ul {
+        flex-direction: column; /* Apilar ítems del índice en pantallas pequeñas */
+        align-items: center;
+    }
+    .index-nav ul li a {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        text-align: center;
+    }
+    .index-nav ul ul {
+        position: static; /* No flotar, sino ser parte del flujo del documento */
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 10px; /* Separación del padre */
+    }
+    .index-nav ul li:hover > ul {
+        display: flex; /* Asegurarse de que se muestre en móvil al hacer hover (si el hover es posible) */
+    }
+    .index-nav ul ul li a {
+        background-color: transparent;
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        text-align: center;
+        border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.05); /* Separador sutil */
+    }
+    .index-nav ul ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .game-section {
+        padding: 60px 0;
+    }
+    .game-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    .game-section h3 {
+        font-size: 1.7rem;
+    }
+    .game-section p, .game-section ul {
+        font-size: 1rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .game-mechanic-block {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-hero h1 {
+        font-size: 2.3rem;
+    }
+    .game-hero h2 {
+        font-size: 1.1rem;
+    }
+    .game-section h2 {
+        font-size: 1.8rem;
+    }
+    .game-section h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-hero h1 {
+        font-size: 1.8rem;
+    }
+    .game-hero h2 {
+        font-size: 1rem;
+    }
+    .hero-buttons .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .index-nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    .game-section h2 {
+        font-size: 1.6rem;
+    }
+    .game-section h3 {
+        font-size: 1.3rem;
+    }
+    .game-section p, .game-section ul {
+        font-size: 0.95rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .game-mechanic-block {
+        padding: 20px;
+    }
+}
