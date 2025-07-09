@@ -4,7 +4,8 @@
     --color-secondary-orange: #ff840f; /* Naranja brillante */
     --color-secondary-orange-rgb: 255, 132, 15;
     --color-secondary-brown: #964b00; /* Marrón oscuro/tierra */
-    --color-white-base: #ebebe9; /* Blanco ligeramente roto */
+    --color-white-base: #ebebe9;
+    --color-white-base-rgb: 235, 235, 233;
     --color-black-base: #131314; /* Negro casi puro */
     --color-black-base-rgb: 19, 19, 20;
     /* Colores para texto y fondo basados*/

@@ -31,356 +31,464 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* Combinación de gradientes para un efecto más técnico/futurista */
-    background-image:
-        linear-gradient(to bottom, rgba(var(--color-black-base-rgb), 0.8) 0%, transparent 40%),
-        linear-gradient(to top, rgba(var(--color-black-base-rgb), 0.8) 0%, transparent 40%),
-        linear-gradient(to right, rgba(var(--color-black-base-rgb), 0.3) 0%, transparent 100%),
-        linear-gradient(to left, rgba(var(--color-black-base-rgb), 0.3) 0%, transparent 100%);
+    background-image: linear-gradient(to top, var(--header-bg) 0%, transparent 60%), linear-gradient(to bottom, var(--header-bg) 0%, transparent 60%);
+    opacity: 0.9;
     z-index: 1;
 }
 
 .game-hero .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
     padding: 20px;
-    animation: fadeInScale 1s ease-out forwards; /* Animación de entrada */
 }
 
 .game-hero h1 {
-    font-size: 3.8rem;
-    font-weight: 800;
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    line-height: 1.2;
     color: var(--color-white-base);
-    text-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.8); /* Sombra para resaltar */
+    text-shadow: 0 0 10px rgba(var(--color-black-base-rgb), 0.7);
 }
 
 .game-hero h2 {
-    font-size: 1.6rem;
-    font-weight: 500;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
     color: var(--color-white-base);
     opacity: 0.9;
-    text-shadow: 0 0 8px rgba(var(--color-black-base-rgb), 0.5);
+    text-shadow: 0 0 8px rgba(var(--color-black-base-rgb), 0.6);
 }
 
-/* Animación para el Hero */
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.game-hero .hero-buttons .btn {
+    margin: 10px;
 }
 
-/* ==========================================================================
-   2. Índice de Contenido del Juego
+/* =========================================================================
+   2. Navegación Interna (Índice de Contenidos) y Secciones Generales del Juego
    ========================================================================== */
 .game-content-index {
-    background-color: var(--background-color);
-    padding: 30px 0;
-    border-bottom: 1px solid rgba(var(--color-black-base-rgb), 0.1);
-    box-shadow: 0 2px 10px rgba(var(--color-black-base-rgb), 0.05);
+    padding: 60px 0;
+    background-color: var(--background-color); /* Fondo claro para esta sección */
 }
 
 .index-nav {
-    max-width: 1200px; /* Ancho máximo para el índice */
-    margin: 0 auto;
-    padding: 0 20px;
+    background-color: var(--color-white-base);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.1);
+    margin-bottom: 50px;
 }
 
 .index-nav h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: center;
+    position: relative;
+}
+
+.index-nav h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secondary-orange);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .index-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Para una navegación horizontal en desktop */
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px; /* Espacio entre los elementos principales */
-}
-
-.index-nav ul li {
-    position: relative;
 }
 
 .index-nav ul li a {
     display: block;
-    padding: 10px 15px;
-    background-color: var(--color-white-base);
+    padding: 10px 0;
     color: var(--text-color);
-    border: 1px solid rgba(var(--color-black-base-rgb), 0.1);
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    white-space: nowrap; /* Evita que los ítems se rompan en varias líneas */
+    transition: color 0.2s ease, transform 0.2s ease;
+    border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.1);
+}
+
+.index-nav ul li:last-child a {
+    border-bottom: none;
 }
 
 .index-nav ul li a:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white-base);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(var(--color-primary-rgb), 0.3);
+    color: var(--color-primary);
+    transform: translateX(5px);
 }
 
-/* Sub-ítems del índice (para "Mecánicas de Juego Clave") */
 .index-nav ul ul {
-    display: none; /* Ocultar por defecto, se mostrará en hover/focus o en móvil */
-    position: absolute;
-    top: 100%; /* Debajo del elemento padre */
-    left: 0;
-    background-color: var(--background-color);
-    border: 1px solid rgba(var(--color-black-base-rgb), 0.15);
-    border-radius: 5px;
-    padding: 10px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
-    z-index: 5;
-    flex-direction: column; /* Apilar los sub-ítems */
-}
-
-.index-nav ul li:hover > ul {
-    display: flex; /* Mostrar sub-ítems al hacer hover en el padre */
-}
-
-.index-nav ul ul li {
-    margin: 0; /* Eliminar margen de los ítems principales */
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .index-nav ul ul li a {
-    padding: 8px 15px;
-    border: none; /* Eliminar borde para sub-ítems */
-    background-color: transparent;
-    border-radius: 0;
-    font-size: 0.9rem;
     font-weight: 400;
+    font-size: 0.95rem;
+    color: rgba(var(--text-color-rgb), 0.8);
+    border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.05); /* Separador sutil */
 }
 
-.index-nav ul ul li a:hover {
-    background-color: rgba(var(--color-primary-rgb), 0.1);
-    color: var(--color-primary);
-    transform: none; /* Sin transformación para sub-ítems */
-    box-shadow: none;
+.index-nav ul ul li:last-child a {
+    border-bottom: none;
 }
 
-
-/* ==========================================================================
-   3. Estilos Generales para las Secciones de Contenido del Juego
-   ========================================================================== */
 .game-section {
-    padding: 80px 0; /* Padding superior e inferior para todas las secciones */
+    padding: 60px 0;
 }
-
-.game-section:nth-child(even) { /* Para dar un fondo diferente a secciones alternas si se desea */
-    background-color: var(--color-white-base);
-}
-
 .game-section h2 {
-    font-size: 2.8rem;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
 }
-
-.game-section h2::after { /* Línea decorativa bajo los títulos */
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 80px;
-    height: 4px;
-    background-color: var(--color-secondary-orange);
-    border-radius: 2px;
-}
-
 .game-section h3 {
-    font-size: 2rem;
-    color: var(--text-color);
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-size: 1.7rem;
 }
-
-.game-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify; /* Justificar texto para una lectura más formal */
+.game-section p, .game-section ul {
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-
-.game-section ul {
-    list-style: disc;
-    padding-left: 25px;
-    margin-bottom: 1em;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-color);
-}
-
-.game-section ul li {
-    margin-bottom: 0.8em;
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-/* Estilos para los bloques de mecánicas individuales */
 .game-mechanic-block {
     background-color: var(--color-white-base);
+    border-radius: 12px;
     padding: 30px;
-    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.08);
     margin-bottom: 40px;
-    border-left: 5px solid var(--color-primary); /* Borde decorativo */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.game-mechanic-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(var(--color-black-base-rgb), 0.12);
+    text-align: center;
 }
 
 .game-mechanic-block h3 {
-    color: var(--color-secondary-orange); /* Un color diferente para los títulos de subsección */
-    margin-top: 0;
-    text-align: left; /* Alineación a la izquierda para los títulos de bloque */
+    color: var(--color-primary);
+    margin-bottom: 15px;
 }
 
 .game-mechanic-block p {
-    text-align: left; /* Asegurar justificación en los bloques */
+    text-align: justify;
+    margin-bottom: 0;
 }
 
-/* Estilos para los botones del Quiz/Encuesta */
-#challenge .btn-primary, #challenge .btn-secondary {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-/* ==========================================================================
-   4. Media Queries (Responsive Design)
+/* =========================================================================
+   3. Estilos Específicos del Quiz
    ========================================================================== */
+
+/* Contenedor principal del Quiz: Fondo Oscuro con Patrón */
+.quiz-game-section {
+    background-color: var(--color-black-base);
+    background-image: linear-gradient(to top, var(--header-bg) 0%, transparent 60%), linear-gradient(to bottom, var(--header-bg) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%230bab11' fill-opacity='0.3' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-position: center center;
+    position: relative;
+    padding: 60px 40px;
+    margin-left: calc(50% - 50vw);
+    color: var(--color-white-base);
+    min-width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center; 
+    justify-content: center;
+    box-sizing: border-box;
+}
+.quiz-game-section h2{
+    color: var(--color-white-base);
+}
+.quiz-game-section .quiz-main-content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-card {
+    background-color: var(--color-white-base);
+    color: var(--color-white-base);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(var(--color-black-base-rgb), 0.5),
+                0 0 10px 2px rgba(var(--color-primary-rgb), 0.6);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+.quiz-question-main-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.quiz-card .question-column { 
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.quiz-card .options-column {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+.quiz-card .quiz-category {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-secondary-orange);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.quiz-card .quiz-question {
+    color: var(--color-primary);
+    margin-bottom: 0;
+    padding-right: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+.quiz-question-options{
+    display: flex;
+    align-items: center;
+}
+.quiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.quiz-option-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    text-wrap: wrap;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(var(--color-black-base-rgb), 0.5);
+}
+.quiz-option-btn.btn-success {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white-base);
+    box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.7);
+}
+.quiz-option-btn.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: var(--color-white-base);
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.9);
+}
+.quiz-option-btn.btn-success-outline {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    text-shadow: none;
+    color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.4);
+}
+.quiz-option-btn.btn-disabled {
+    background-color: rgba(var(--color-black-base-rgb), 0.05);
+    border-color: rgba(var(--color-black-base-rgb), 0.1);
+    color: rgba(var(--color-black-base-rgb), 0.4);
+    text-shadow: none;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.quiz-feedback-area {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+.quiz-feedback-area p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.quiz-feedback-area .feedback-correct {
+    color: var(--color-primary);
+    text-align: center;
+}
+.quiz-feedback-area .feedback-incorrect {
+    color: var(--color-secondary-orange);
+    text-align: center;
+}
+.quiz-explanation {
+    background-color: rgba(var(--color-primary-rgb), 0.05);
+    color: var(--text-color);
+    border-left: 5px solid var(--color-primary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+}
+.quiz-feedback-area .btn {
+    margin-top: 25px;
+    width: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-size: 1.1rem;
+}
+/* =========================================================================
+   4. Visuales por Categoría en la Tarjeta del Quiz
+   ========================================================================== */
+.quiz-card.category-movilidad_urbana {
+    background-image: url('/assets/patterns/leaf.svg');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 180px;
+    opacity: 1;
+    background-blend-mode: multiply;
+    /* background-color: #f8f8f8; */
+}
+.quiz-card.category-energia_sostenible {
+    background-image: url('/assets/patterns/leaf.svg'); 
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 180px;
+    opacity: 1;
+    background-blend-mode: multiply;
+}
+.quiz-card.category-biodiversidad_y_ecosistemas {
+    background-image: url('/assets/patterns/biodiversity-pattern.svg'); /* REEMPLAZAR con patrón real */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    opacity: 1;
+    background-blend-mode: multiply;
+}   
+/* =========================================================================
+   5. Media Queries para Responsividad (revisados)
+   ========================================================================== */
+
 @media (max-width: 992px) {
-    .game-hero {
-        min-height: 60vh;
+    .quiz-card {
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    .game-hero h1 {
+    .quiz-question-main-content{
+        flex-flow: column wrap;
+    }
+    .quiz-card .question-column,
+    .quiz-card .options-column {
+        flex-grow: none;
+        width: 100%;
+    }
+    .quiz-card .quiz-question {
+        font-size: 1.8rem;
+        padding: 10px;
+        margin-top: 0;
+        text-align: center;
+    }
+    .quiz-card .quiz-category {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .quiz-option-btn {
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+    .quiz-feedback-area .btn {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-hero h1 { /* Ajuste en hero si es afectado */
         font-size: 2.8rem;
     }
     .game-hero h2 {
         font-size: 1.3rem;
     }
-
-    .index-nav ul {
-        flex-direction: column; /* Apilar ítems del índice en pantallas pequeñas */
-        align-items: center;
+    .quiz-game-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px));
+        align-items: flex-start;
+        overflow-y: auto;
     }
-    .index-nav ul li a {
-        width: 100%; /* Ocupar todo el ancho disponible */
-        text-align: center;
+    .quiz-game-section .quiz-main-content-wrapper {
+        padding: 0 15px; 
+        width: 95%; 
     }
-    .index-nav ul ul {
-        position: static; /* No flotar, sino ser parte del flujo del documento */
-        box-shadow: none;
-        border: none;
-        padding: 0;
-        margin-top: 10px; /* Separación del padre */
+    .quiz-card {
+        padding: 20px;
+        border-radius: 12px;
+        gap: 20px;
     }
-    .index-nav ul li:hover > ul {
-        display: flex; /* Asegurarse de que se muestre en móvil al hacer hover (si el hover es posible) */
-    }
-    .index-nav ul ul li a {
-        background-color: transparent;
-        padding: 5px 10px;
-        font-size: 0.85rem;
-        text-align: center;
-        border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.05); /* Separador sutil */
-    }
-    .index-nav ul ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .game-section {
-        padding: 60px 0;
-    }
-    .game-section h2 {
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-    }
-    .game-section h3 {
+    .quiz-card .quiz-question {
         font-size: 1.7rem;
     }
-    .game-section p, .game-section ul {
-        font-size: 1rem;
-        padding-left: 20px;
-        padding-right: 20px;
+    .quiz-card .quiz-category {
+        font-size: 0.9rem;
     }
-    .game-mechanic-block {
-        padding: 25px;
-        margin-bottom: 30px;
+    .quiz-options {
+        gap: 10px;
+    }
+    .quiz-option-btn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+        min-height: 50px; 
+        max-width: 100%;
+    }
+    .quiz-feedback-message {
+        font-size: 1rem;
+    }
+    .quiz-explanation {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    .quiz-feedback-area .btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
     }
 }
 
-@media (max-width: 768px) {
-    .game-hero h1 {
+@media (max-width: 480px) {
+    .game-hero h1 { /* Ajuste en hero si es afectado */
         font-size: 2.3rem;
     }
     .game-hero h2 {
         font-size: 1.1rem;
     }
-    .game-section h2 {
-        font-size: 1.8rem;
-    }
-    .game-section h3 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .game-hero h1 {
-        font-size: 1.8rem;
-    }
-    .game-hero h2 {
-        font-size: 1rem;
-    }
     .hero-buttons .btn {
         padding: 0.8rem 1.2rem;
         font-size: 0.9rem;
     }
-    .index-nav ul li a {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+    .quiz-game-section{
+        padding: 10px;
     }
-    .game-section h2 {
-        font-size: 1.6rem;
+    .quiz-card {
+        margin: 0;
+        padding: 10px;
     }
-    .game-section h3 {
-        font-size: 1.3rem;
+    .quiz-card .quiz-question {
+        font-size: 1.5rem;
     }
-    .game-section p, .game-section ul {
-        font-size: 0.95rem;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .game-mechanic-block {
-        padding: 20px;
+    .quiz-option-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.8rem;
     }
 }

@@ -10,7 +10,6 @@
     transition: all 0.3s ease-in-out, transform 0.2s ease-out;
     border: 2px solid transparent;
     cursor: pointer;
-    white-space: nowrap;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -42,7 +41,11 @@
     transform: translateY(-3px) scale(1.02); /* Efecto de "pulse" y elevación */
     text-shadow: 0 0 10px var(--color-secondary-orange); /* Intensifica el text-shadow con el color secundario */
 }
-
+a.btn,
+a:visited.btn{
+    color: var(--color-white-base);
+    text-decoration: none;
+}
 /* --- Card's ---- */
 .card{
     background-color: var(--color-white-base);

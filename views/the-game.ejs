@@ -100,15 +100,16 @@
             <p>Este sitio web es solo el comienzo. <strong>EcologicalCity</strong> es un proyecto en constante evolución, impulsado por la pasión por la innovación y la <strong>sostenibilidad</strong>. Nuestro objetivo principal es lograr el <strong>desarrollo completo de esta ambiciosa idea</strong>, incorporando gradualmente todas las mecánicas, tecnologías y escenarios que la harán una experiencia educativa profunda y <em>cautivadora</em>. Visualizamos que, con dedicación y el apoyo adecuado, <strong>EcologicalCity</strong> se convertirá en una herramienta robusta para la conciencia ambiental. Queremos construir una comunidad de jugadores comprometidos que nos ayuden a dar forma al futuro de la conciencia ambiental a través del juego.</p>
         </section>
 
-        <section id="challenge" class="game-section container">
+        <section id="challenge" class="quiz-game-section container">
             <h2>Desafía Tus Conocimientos</h2>
             <p>Antes de que te sumerjas por completo en la gestión de tu propia ciudad, ¿qué tan preparado estás para enfrentar los desafíos de la sostenibilidad? ¡Participa en nuestra breve trivia y descúbrelo! Las preguntas estarán diseñadas para evaluar conceptos que, aunque puedan parecer académicos, serán <strong>fundamentales</strong> para tomar las mejores decisiones y alcanzar el <strong>éxito en EcologicalCity</strong>.</p>
-            <div class="text-center">
-                <button id="start-quiz-btn" class="btn btn-primary">Comenzar Trivia Ambiental</button>
+            <div class="container quiz-main-content-wrapper">   
+                <div class="text-center">
+                    <button id="start-quiz-btn" class="btn btn-primary">Comenzar Trivia Ambiental</button>
+                </div>
+                <div id="quiz-container"></div>
             </div>
-            <div id="quiz-container"></div>
-
-            <p class="mt-4">Tus ideas son valiosas. Comparte tu opinión sobre el poder de los videojuegos para la educación ambiental y ayúdanos a construir el futuro de <strong>EcologicalCity</strong>.</p>
+            <p class="text-center">Tus ideas son valiosas. Comparte tu opinión sobre el poder de los videojuegos para la educación ambiental y ayúdanos a construir el futuro de <strong>EcologicalCity</strong>.</p>
             <div class="text-center">
                 <button id="start-survey-btn" class="btn btn-secondary">Compartir mi Opinión</button>
             </div>
@@ -117,7 +118,8 @@
 
     </main>
     <%- include('partials/footer', { currentPage: 'the-game', atrribution: false }) %>
-    <script src="../js/main.js"></script>
-    <script src="../js/the-game.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="js/pages/quizData.js"></script>
+    <script src="/js/pages/the-game.js"></script>
 </body>
 </html>

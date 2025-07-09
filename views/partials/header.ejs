@@ -6,12 +6,48 @@
         </a>
         <nav class="main-nav">
             <ul>
-                <li><a href="/" <%= currentPage === 'landing' ? 'class="active"' : '' %> >Inicio</a></li>
-                <li><a href="/the-game" <%= currentPage === 'the-game' ? 'class="active"' : '' %>>El Juego</a></li>
-                <li><a href="/news" <%= currentPage === 'news' ? 'class="active"' : '' %>>Tecnología y Avances</a></li>
-                <li><a href="/glosary" <%= currentPage === 'glosary' ? 'class="active"' : '' %>>Glosario</a></li>
-                <li><a href="/about" <%= currentPage === 'about' ? 'class="active"' : '' %>>Acerca de</a></li>
-                <li><a href="/contact" <%= currentPage === 'contact' ? 'class="active"' : '' %>>Contacto</a></li> </ul>
+                <li><a href="/"
+                <% if (currentPage === 'landing') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                Inicio</a></li>
+                <li><a href="/the-game"
+                <% if (currentPage === 'the-game') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                El Juego</a></li>
+                <li><a href="/news"
+                <% if (currentPage === 'news') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                Tecnología y Avances</a></li>
+                <li><a href="/glosary"
+                <% if (currentPage === 'glosary') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                Glosario</a></li>
+                <li><a href="/about"
+                <% if (currentPage === 'about') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                Acerca de</a></li>
+                <li><a href="/contact"
+                <% if (currentPage === 'contact') { %>
+                    <%- 'class="active">' %>
+                <% }else {%>
+                    <%- '>' %>
+                <% } %>
+                Contacto</a></li> </ul>
             </ul>
         </nav>
         <button class="nav-toggle " aria-label="Abrir menú de navegación">

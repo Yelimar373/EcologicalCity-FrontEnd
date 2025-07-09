@@ -1,0 +1,60 @@
+Guía del Grafo de Preguntas de EcologicalCity Quiz:
+
+El quiz se estructura como un flujo ramificado, donde las respuestas del usuario determinan la siguiente pregunta.
+
+[q1_inicio] (Introducción)
+  - Pregunta: Impacto en la contaminación del aire.
+  - Ramificaciones:
+    - Respuesta "Movilidad Sostenible" -> [q2_movilidad_juego]
+    - Respuesta "Contaminación Transporte" -> [q2_repaso_transporte]
+    - Respuesta "Contaminación Industrial" -> [q2_repaso_industria]
+    - Por defecto (otras) -> [q2_agua]
+
+[q2_movilidad_juego] (Juego)
+  - Pregunta: Fomento de movilidad sostenible en ciudad virtual.
+  - Siguiente: [q3_energia]
+
+[q2_repaso_transporte] (Repaso)
+  - Pregunta: Soluciones a emisiones del transporte.
+  - Siguiente: [q3_agua]
+
+[q2_repaso_industria] (Repaso)
+  - Pregunta: Mitigar impacto industrial.
+  - Siguiente: [q3_residuos]
+
+[q2_agua] (Fundamentos)
+  - Pregunta: Conservación del agua.
+  - Siguiente: [q3_energia]
+
+[q3_energia] (Fundamentos)
+  - Pregunta: Fuentes de energía renovable.
+  - Siguiente: [q4_biodiversidad]
+
+[q3_agua] (Fundamentos)
+  - Pregunta: Gestión del agua de lluvia.
+  - Siguiente: [q4_recursos_naturales]
+
+[q3_residuos] (Fundamentos)
+  - Pregunta: Reducción de residuos.
+  - Siguiente: [q4_biodiversidad]
+
+[q4_biodiversidad] (Fundamentos)
+  - Pregunta: Importancia de áreas verdes urbanas.
+  - Ramificaciones:
+    - Respuesta "Biodiversidad Importante" -> [q5_compostaje]
+    - Respuesta "Jardines Verticales" -> [q5_compostaje]
+    - Por defecto (otras) -> [q5_compostaje]
+
+[q4_recursos_naturales] (Fundamentos)
+  - Pregunta: Recursos naturales no renovables.
+  - Siguiente: [q5_compostaje]
+
+[q5_compostaje] (Fundamentos)
+  - Pregunta: Beneficios del compostaje.
+  - Siguiente: [q_final_evaluacion]
+
+[q_final_evaluacion] (Cierre)
+  - Pregunta: Mayor desafío para una EcologicalCity sostenible.
+  - Ramificaciones:
+    - Múltiples opciones, todas llevan al final del quiz.
+  - Siguiente: Fin del quiz (null)

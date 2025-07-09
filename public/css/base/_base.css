@@ -15,12 +15,15 @@ p {
   margin-bottom: 1em;
 }
 a {
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: bold;
   color: var(--color-primary);
 }
 a:hover {
   color: var(--color-secondary-orange);
+}
+a:visited{
+  color: rgba(var(--color-primary-rgb), 0.2);
 }
 /* --- Estilos para <strong> (fuerte) --- */
 strong {
