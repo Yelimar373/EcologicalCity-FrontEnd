@@ -1,225 +1,377 @@
-/* Importa tus variables y fuentes si es necesario, aunque styles.css ya lo hace */
-
-/* ==========================================================================
-   1. Hero Section Específico para 'El Juego'
-   ========================================================================== */
+/*
+==========================================================================
+    Hero Section Específico para 'El Juego'
+========================================================================== */
 .game-hero {
-    background-image: url("/assets/img/the-game/hero-concept.avif"); /* Placeholder - Reemplaza con tu imagen conceptual del juego */
     background-image: image-set(
-        url("/assets/img/the-game/hero-concept.avif") type("image/avif"),
-        url('/assets/img/the-game/hero-concept.webp') type('image/webp'),
-        url('/assets/img/the-game/hero-concept.png') type('image/png')
+        url("/assets/img/the-game/hero/hero.avif") type("image/avif"),
+        url('/assets/img/the-game/hero/hero.webp') type('image/webp'),
+        url('/assets/img/the-game/hero/hero.png') type('image/png')
     );
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: var(--color-white-base);
-    min-height: 80vh; /* Un poco menos alto que el de la landing */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    /* Efecto de superposición para integrar con el header/footer y mejorar legibilidad */
+    height: 80vh;
 }
-
-.game-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to top, var(--header-bg) 0%, transparent 60%), linear-gradient(to bottom, var(--header-bg) 0%, transparent 60%);
-    opacity: 0.9;
-    z-index: 1;
-}
-
-.game-hero .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-}
-
-.game-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    color: var(--color-white-base);
-    text-shadow: 0 0 10px rgba(var(--color-black-base-rgb), 0.7);
-}
-
-.game-hero h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 30px;
-    color: var(--color-white-base);
-    opacity: 0.9;
-    text-shadow: 0 0 8px rgba(var(--color-black-base-rgb), 0.6);
-}
-
-.game-hero .hero-buttons .btn {
-    margin: 10px;
-}
-
-/* =========================================================================
-   2. Navegación Interna (Índice de Contenidos) y Secciones Generales del Juego
-   ========================================================================== */
+/*
+=========================================================================
+    Navegación Interna (Índice de Contenidos) y Secciones Generales del Juego
+========================================================================== */
 .game-content-index {
-    padding: 60px 0;
-    background-color: var(--background-color); /* Fondo claro para esta sección */
+    padding: 40px 0;
 }
-
+.game-content-index .container {
+    max-width: 900px;
+}
 .index-nav {
-    background-color: var(--color-white-base);
+    background-color: rgba(var(--color-black-base-rgb), 0.3);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.3);
     border-radius: 12px;
-    padding: 30px;
+    padding: 20px 40px;
     box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.1);
     margin-bottom: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.index-nav h3 {
+.game-content-index .index-nav h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
     position: relative;
+    padding-bottom: 10px;
 }
-
-.index-nav h3::after {
+.game-content-index .index-nav h3::after {
     content: '';
-    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
     width: 60px;
     height: 3px;
     background-color: var(--color-secondary-orange);
-    margin: 10px auto 0;
     border-radius: 2px;
 }
-
-.index-nav ul {
+.game-content-index .index-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
-
-.index-nav ul li a {
+.game-content-index .index-nav ul li a {
     display: block;
-    padding: 10px 0;
-    color: var(--text-color);
+    padding: 12px 15px;
+    color: var(--color-white-base);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease, transform 0.2s ease;
-    border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.1);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-align: left;
 }
-
-.index-nav ul li:last-child a {
-    border-bottom: none;
-}
-
-.index-nav ul li a:hover {
+.game-content-index .index-nav ul li a:hover {
+    background-color: rgba(var(--color-primary-rgb), 0.15);
     color: var(--color-primary);
     transform: translateX(5px);
 }
-
-.index-nav ul ul {
-    padding-left: 20px;
+.game-content-index .index-nav ul li ul {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-left: 20px;
+    border-left: 2px dashed rgba(var(--color-secondary-orange-rgb), 0.3);
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
-
-.index-nav ul ul li a {
-    font-weight: 400;
-    font-size: 0.95rem;
-    color: rgba(var(--text-color-rgb), 0.8);
-    border-bottom: 1px dashed rgba(var(--color-black-base-rgb), 0.05); /* Separador sutil */
-}
-
-.index-nav ul ul li:last-child a {
-    border-bottom: none;
-}
-
-.game-section {
-    padding: 60px 0;
-}
-.game-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-}
-.game-section h3 {
-    font-size: 1.7rem;
-}
-.game-section p, .game-section ul {
+.game-content-index .index-nav ul li ul li a {
     font-size: 1rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 8px 10px;
+    color: rgba(var(--color-white-base-rgb), 0.8); 
 }
-.game-mechanic-block {
-    background-color: var(--color-white-base);
-    border-radius: 12px;
+.game-content-index .index-nav ul li ul li a:hover {
+    background-color: rgba(var(--color-secondary-orange-rgb), 0.1);
+    color: var(--color-secondary-orange);
+    transform: translateX(3px);
+}
+/*
+==========================================================================\
+    Secciones 
+========================================================================== */
+.section-content{
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    color: var(--text-color);
+}
+.section-content h2{
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-content h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--color-secondary-orange);
+    border-radius: 2px;
+}
+
+.section-content p{
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.08);
-    margin-bottom: 40px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+/* --- Visión --- */
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.vision-image-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vision-image-block img {
+    max-height: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* --- Mecanismos del Juego --- */
+.section-game-mechanics {
+    padding: 80px 0;
+    background-color: var(--background-color); /* Fondo sólido */
+}
+
+.section-game-mechanics h2 {
+    color: var(--color-primary); /* Título principal en verde */
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.section-game-mechanics .lead {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.7;
     text-align: center;
 }
 
-.game-mechanic-block h3 {
+.mechanics-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Espacio entre cada bloque de mecánica */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mechanic-block {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio entre imagen y texto */
+    padding: 20px; /* Un padding sutil alrededor del bloque */
+    border-radius: 12px;
+    background-color: var(--color-white-base); /* Un fondo claro para la sección */
+    box-shadow: 0 10px 30px rgba(var(--color-black-base-rgb), 0.05); /* Sombra suave */
+    transition: box-shadow 0.3s ease; /* Transición para la sombra al pasar el ratón */
+}
+
+.mechanic-block:hover {
+    box-shadow: 0 15px 40px rgba(var(--color-black-base-rgb), 0.1); /* Sombra ligeramente más prominente */
+}
+
+.mechanic-block.reverse {
+    flex-direction: row-reverse; /* Invertir orden para la alternancia */
+}
+
+.mechanic-visual {
+    flex: 1;
+    min-width: 40%; /* La imagen toma al menos el 40% del ancho */
+    max-width: 50%; /* La imagen toma como máximo el 50% del ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mechanic-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes ligeramente redondeados para las imágenes */
+    box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mechanic-block:hover .mechanic-visual img {
+    transform: scale(1.02); /* Ligero zoom al hacer hover en el bloque */
+}
+
+
+.mechanic-info {
+    flex: 1.5; /* El texto toma más espacio que la imagen */
+    max-width: 60%;
+    text-align: left; /* Alineación de texto por defecto */
+    padding: 20px 0; /* Padding vertical para el contenido */
+}
+
+.mechanic-info h3 {
+    font-size: 2rem; /* Títulos de las mecánicas más grandes */
     color: var(--color-primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mechanic-info p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
-.game-mechanic-block p {
-    text-align: justify;
-    margin-bottom: 0;
+.mechanic-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
 }
 
+.mechanic-info ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 30px; /* Espacio para el icono de la lista */
+    position: relative;
+    color: var(--text-color);
+}
+
+.mechanic-info ul li::before {
+    content: '🌱'; /* Ícono de hoja de tu estilo anterior */
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary-orange); /* Color naranja para el icono */
+    font-size: 1.2rem;
+    top: 0;
+}
+
+.section-educational-impact {
+    padding: 80px 0; /* Ajusta el padding según necesites */
+    background-color: var(--background-color); /* Usa el color de fondo base para evitar saturación */
+}
+.section-educational-impact .lead {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.impact-card {
+    border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 /* =========================================================================
    3. Estilos Específicos del Quiz
    ========================================================================== */
 
 /* Contenedor principal del Quiz: Fondo Oscuro con Patrón */
 .quiz-game-section {
-    background-color: var(--color-black-base);
-    background-image: linear-gradient(to top, var(--header-bg) 0%, transparent 60%), linear-gradient(to bottom, var(--header-bg) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%230bab11' fill-opacity='0.3' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-position: center center;
-    position: relative;
     padding: 60px 40px;
     margin-left: calc(50% - 50vw);
     color: var(--color-white-base);
     min-width: 100vw;
+    overflow: hidden;
     display: flex;
     flex-flow: column nowrap;
     align-items: center; 
     justify-content: center;
     box-sizing: border-box;
+    min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px));
 }
 .quiz-game-section h2{
     color: var(--color-white-base);
 }
 .quiz-game-section .quiz-main-content-wrapper {
     position: relative;
+    overflow: hidden;
     z-index: 1;
     max-width: 1000px;
-    width: 90%;
+    min-height: 400px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(var(--color-black-base-rgb), 0.5);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: image-set(
+        url('/assets/img/quiz-categories/movilidad_urbana.png') type('image/png')
+    );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
 }
 .quiz-card {
-    background-color: var(--color-white-base);
-    color: var(--color-white-base);
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(var(--color-black-base-rgb), 0.5),
-                0 0 10px 2px rgba(var(--color-primary-rgb), 0.6);
-    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
     display: flex;
-    text-align: left;
-    position: relative;
+    flex-grow: 1;
     overflow: hidden;
+    padding: 30px;
+    gap: 30px;
+    transition: all 0.5s ease-in-out;
+}
+.quiz-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: linear-gradient(to right,
+    var(--color-white-base),
+    rgba(var(--color-white-base-rgb), 0.5)
+    );
+}
+.quiz-card.exit {
+    opacity: 0;
+    transform: translateX(-50px);
+    pointer-events: none;
+}
+.quiz-card.enter {
+    opacity: 0;
+    transform: translateX(50px);
+}
+.quiz-card.enter.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 .quiz-question-main-content {
     display: flex;
@@ -229,19 +381,23 @@
     z-index: 2;
 }
 .quiz-card .question-column { 
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 15px;
+    text-align: left;
 }
 .quiz-card .options-column {
     flex: 1; 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px; 
+    padding-left: 15px;
 }
 .quiz-card .quiz-category {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--color-secondary-orange);
     text-transform: uppercase;
@@ -253,7 +409,7 @@
 }
 .quiz-card .quiz-question {
     color: var(--color-primary);
-    margin-bottom: 0;
+    margin-bottom: 10px;
     padding-right: 2rem;
     font-size: 1.6rem;
     font-weight: 700;
@@ -276,18 +432,24 @@
 }
 .quiz-option-btn {
     width: 100%;
+    min-height: 60px;
     font-size: 1.1rem;
     text-wrap: wrap;
     padding: 1rem 1.5rem;
     border-radius: 10px;
-    transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 10px rgba(var(--color-black-base-rgb), 0.5);
+    transition: all 0.2s ease-in-out;
 }
 .quiz-option-btn.btn-success {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white-base);
     box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.7);
+}
+.quiz-option-btn.selected {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.6);
+    border-color: var(--color-primary);
 }
 .quiz-option-btn.btn-danger {
     background-color: #e74c3c;
@@ -296,10 +458,9 @@
     box-shadow: 0 0 15px rgba(231, 76, 60, 0.9);
 }
 .quiz-option-btn.btn-success-outline {
-    background-color: transparent;
+    background-color: rgba(var(--color-primary-rgb), 0.7);
     border-color: var(--color-primary);
     text-shadow: none;
-    color: var(--color-primary);
     box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.4);
 }
 .quiz-option-btn.btn-disabled {
@@ -317,9 +478,12 @@
     z-index: 2;
 }
 .quiz-feedback-area p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 .quiz-feedback-area .feedback-correct {
     color: var(--color-primary);
@@ -330,15 +494,25 @@
     text-align: center;
 }
 .quiz-explanation {
-    background-color: rgba(var(--color-primary-rgb), 0.05);
+    background: linear-gradient( to left,
+    rgba(var(--color-white-base-rgb), 0.6),
+    rgba(var(--color-white-base-rgb), 0.1));
     color: var(--text-color);
     border-left: 5px solid var(--color-primary);
     padding: 20px;
-    border-radius: 8px;
     margin-top: 20px;
+    border-radius: 0 8px 8px 0;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
     text-align: left;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.quiz-explanation.show,
+.quiz-feedback-message.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 .quiz-feedback-area .btn {
     margin-top: 25px;
@@ -347,39 +521,63 @@
     padding-right: 2.5rem;
     font-size: 1.1rem;
 }
+
 /* =========================================================================
-   4. Visuales por Categoría en la Tarjeta del Quiz
-   ========================================================================== */
-.quiz-card.category-movilidad_urbana {
-    background-image: url('/assets/patterns/leaf.svg');
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: 180px;
-    opacity: 1;
-    background-blend-mode: multiply;
-    /* background-color: #f8f8f8; */
-}
-.quiz-card.category-energia_sostenible {
-    background-image: url('/assets/patterns/leaf.svg'); 
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 180px;
-    opacity: 1;
-    background-blend-mode: multiply;
-}
-.quiz-card.category-biodiversidad_y_ecosistemas {
-    background-image: url('/assets/patterns/biodiversity-pattern.svg'); /* REEMPLAZAR con patrón real */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 200px;
-    opacity: 1;
-    background-blend-mode: multiply;
-}   
-/* =========================================================================
-   5. Media Queries para Responsividad (revisados)
-   ========================================================================== */
+    Media Queries para Responsividad (revisados)
+========================================================================== */
 
 @media (max-width: 992px) {
+    .section-content {
+        padding: 60px 0;
+    }
+    .section-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    .section-content p {
+        padding: 25px;
+    }
+    .vision-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .game-mechanics-section .section-description {
+        margin-bottom: 40px;
+        font-size: 1rem;
+    }
+    .mechanics {
+        gap: 30px;
+    }
+    .mechanic-card {
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .mechanic-card .mechanic-title {
+        font-size: 1.7rem;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .mechanic-card .mechanic-description p,
+    .mechanic-card .mechanic-description ul li {
+        font-size: 0.95rem;
+    }
+    .section-educational-impact {
+        padding: 60px 0;
+    }
+    .section-educational-impact h2 {
+        font-size: 2rem;
+    }
+    .section-educational-impact .lead {
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+    }
+    .impact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .impact-card {
+        padding: 25px;
+    }
     .quiz-card {
         padding: 30px;
         flex-direction: column;
@@ -422,28 +620,96 @@
     .game-hero h2 {
         font-size: 1.3rem;
     }
+    .game-content-index .container {
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+    .game-content-index .index-nav h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .game-content-index .index-nav ul li a {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+    .game-content-index .index-nav ul li ul {
+        margin-left: 15px;
+        padding-left: 8px;
+    }
+    .game-content-index .index-nav ul li ul li a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+    .section-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .section-content p {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .vision-content{
+        gap: 30px;
+    }
+    .vision-image-block img{
+        max-width: 250px;
+    }
+    .impact-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+    }
+    .impact-card {
+        padding: 20px;
+    }
+    .impact-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    .impact-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    .impact-card h3 {
+        font-size: 1.4rem;
+    }
+    .impact-card p {
+        font-size: 0.95rem;
+    }
     .quiz-game-section {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px));
+        padding-top: 30px 15px;
+        min-height: calc(100vh - var(--header-height, 80px));
         align-items: flex-start;
         overflow-y: auto;
     }
     .quiz-game-section .quiz-main-content-wrapper {
-        padding: 0 15px; 
+        padding: 15px; 
+        min-height: auto;
         width: 95%; 
     }
+    .quiz-card::before {
+    background: linear-gradient(to bottom,
+    var(--color-white-base),
+    rgba(var(--color-white-base-rgb), 0.5)
+    );
+    }
     .quiz-card {
-        padding: 20px;
-        border-radius: 12px;
-        gap: 20px;
+        padding: 15px;
+        gap: 15px;
     }
     .quiz-card .quiz-question {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    .quiz-card .question-column,
+    .quiz-card .options-column {
+        padding: 0;
+        align-items: center;
+        text-align: center;
     }
     .quiz-card .quiz-category {
         font-size: 0.9rem;
-    }
+    }   
     .quiz-options {
         gap: 10px;
     }
@@ -454,10 +720,13 @@
         max-width: 100%;
     }
     .quiz-feedback-message {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     .quiz-explanation {
-        padding: 15px;
+        background: linear-gradient( to top,
+        rgba(var(--color-white-base-rgb), 0.6),
+        rgba(var(--color-white-base-rgb), 0.1));
+        padding: 10px;
         font-size: 0.9rem;
     }
     .quiz-feedback-area .btn {
@@ -467,7 +736,7 @@
 }
 
 @media (max-width: 480px) {
-    .game-hero h1 { /* Ajuste en hero si es afectado */
+    .game-hero h1 {
         font-size: 2.3rem;
     }
     .game-hero h2 {
@@ -477,6 +746,19 @@
         padding: 0.8rem 1.2rem;
         font-size: 0.9rem;
     }
+    .section-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    .vision-content{
+        gap: 15px;
+    }
+    .mechanic-card {
+        padding: 15px;
+    }
+    .mechanic-card h3 {
+        font-size: 1.5rem;
+    }
     .quiz-game-section{
         padding: 10px;
     }
@@ -485,7 +767,7 @@
         padding: 10px;
     }
     .quiz-card .quiz-question {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
     .quiz-option-btn {
         font-size: 0.9rem;

@@ -1,0 +1,103 @@
+.page-hero {
+    background-color: var(--color-black-base);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    color: var(--color-white-base);
+    padding: 40px 0;
+    text-align: center;
+    text-shadow: 0 0 5px var(--text-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.page-hero h2, .page-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 20px auto; /* Para p */
+    color: var(--color-white-base);
+    opacity: 0.9;
+}
+
+.page-hero .hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre botones */
+}
+/* Keyframes para la animación de fade-in y slide-up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animaciones con retraso */
+.page-hero .animate-hero-h1,
+.page-hero .animate-hero-h2,
+.page-hero .animate-hero-p,
+.page-hero .animate-hero-buttons {
+    opacity: 0; /* Asegurarse de que estén ocultos al inicio */
+    animation: fadeInUp 0.8s ease-out forwards; /* Duración, tipo y que se quede al final */
+}
+
+.page-hero .animate-hero-h1 {
+    animation-delay: 0.2s; /* Título aparece primero */
+}
+
+.page-hero .animate-hero-h2 {
+    animation-delay: 0.5s; /* Subtítulo después del título */
+}
+
+.page-hero .animate-hero-p { /* Si usas 'p' en lugar de h2 para la descripción */
+    animation-delay: 0.5s;
+}
+
+.page-hero .animate-hero-buttons {
+    animation-delay: 0.8s; /* Botones al final, creando un efecto escalonado */
+}
+
+/* Media Queries para deshabilitar o simplificar animaciones en dispositivos de bajo rendimiento si es necesario */
+@media (prefers-reduced-motion: reduce) {
+    .page-hero .animate-hero-h1,
+    .page-hero .animate-hero-h2,
+    .page-hero .animate-hero-p,
+    .page-hero .animate-hero-buttons {
+        animation: none; /* Deshabilita la animación si el usuario prefiere movimiento reducido */
+        opacity: 1; /* Asegura que sean visibles */
+    }
+}
+/* Estilos responsivos base para el hero */
+@media (max-width: 768px) {
+    .page-hero h1 { font-size: 2.2rem; }
+    .page-hero h2, .page-hero p { font-size: 1rem; }
+    .page-hero .hero-buttons .btn { width: 100%; max-width: 300px; } /* Ajuste de botones en móvil */
+}

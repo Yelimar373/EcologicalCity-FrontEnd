@@ -1,0 +1,19 @@
+<section class="page-hero <%= typeof additionalClass !== 'undefined' ? additionalClass : '' %>"
+    style=<%= typeof backgroundImage !== 'undefined' ? '"background-image: url(' + backgroundImage + ');' : '"' %>">
+    <div class="container hero-content">
+        <h1 class="animate-hero-h1"><%- title %></h1>
+        <% if (typeof subtitle !== 'undefined') { %>
+            <h2 class="animate-hero-h2"><%- subtitle %></h2>
+        <% } %>
+        <% if (typeof description !== 'undefined') { %>
+            <p class="animate-hero-p"><%- description %></p>
+        <% } %>
+        <% if (typeof buttons !== 'undefined' && buttons.length > 0) { %>
+            <div class="hero-buttons animate-hero-buttons">
+                <% buttons.forEach(function(button) { %>
+                    <a href="<%= button.href %>" class="btn <%= button.class %>"><%= button.text %></a>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</section>

@@ -6,5 +6,6 @@
 
 /* Importa los componentes */
 @import url('/css/components/_header.css');
+@import url('/css/components/_page-hero.css');
 @import url('/css/components/_footer.css');
 @import url('/css/components/_utils.css');

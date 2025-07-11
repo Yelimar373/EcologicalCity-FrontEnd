@@ -7,6 +7,7 @@
 class QuizEngine {
     constructor(quizData, quizContainerId, startButtonId) {
         this.quizData = quizData;
+        this.quizMainContentWrapper = document.querySelector('.quiz-main-content-wrapper');
         this.quizContainer = document.getElementById(quizContainerId);
         this.startButton = document.getElementById(startButtonId);
         this.currentQuestion = null;
@@ -69,19 +70,40 @@ class QuizEngine {
         this.questionStartTime = new Date();
 
         const categoryClass = `category-${this.currentQuestion.category}`;
+        const currentQuizCard = this.quizContainer.querySelector('.quiz-card');
 
-        // MODIFICACIÓN CLAVE AQUÍ: Estructura de dos columnas para la tarjeta del quiz
+        if (currentQuizCard) {
+            currentQuizCard.classList.remove('active');
+            currentQuizCard.classList.add('exit');
+            // Wait for the exit animation to complete before loading new content
+            currentQuizCard.addEventListener('transitionend', () => {
+                this.renderQuestionContent(categoryClass);
+            }, { once: true });
+        } else {
+            this.renderQuestionContent(categoryClass);
+        }
+    }
+    renderQuestionContent(categoryClass) {
+        if (this.scoreDisplay) {
+            this.scoreDisplay.textContent = this.score;
+        }
+        if (this.questionValueDisplay) {
+            this.questionValueDisplay.textContent = this.currentQuestion.points || 1; 
+        }
+        this.quizMainContentWrapper.classList.add(categoryClass);
         const questionHtml = `
-            <div class="card quiz-card ${categoryClass}">
+            <div class="card quiz-card enter">
                 <div class="quiz-question-main-content">
                     <div class="question-column">
                         <p class="quiz-category">Categoría: ${this.currentQuestion.category.replace(/_/g, ' ').toUpperCase()}</p>
+                        <p>Puntuación Actual: <strong id="current-score-display">${this.score}</strong></p>
                         <h3 class="quiz-question">${this.currentQuestion.question}</h3>
+                        <p>Valor Pregunta: <strong id="question-value-display">${this.currentQuestion.points || 1}</strong></p>
                     </div>
                     <div class="options-column">
                         <div class="quiz-options">
                             ${this.currentQuestion.options.map((option, index) => `
-                                <button class="btn btn-secondary quiz-option-btn" data-option-index="${index}">
+                                <button class="btn btn-third quiz-option-btn" data-option-index="${index}">
                                     ${option.text}
                                 </button>
                             `).join('')}
@@ -92,6 +114,17 @@ class QuizEngine {
             </div>
         `;
         this.quizContainer.innerHTML = questionHtml;
+
+        // Trigger enter animation
+        const newQuizCard = this.quizContainer.querySelector('.quiz-card');
+        if (newQuizCard) {
+            // A slight delay to ensure the `enter` class is applied before `active`
+            setTimeout(() => {
+                newQuizCard.classList.add('active');
+                newQuizCard.classList.remove('enter');
+            }, 50); // Small delay
+        }
+
 
         this.quizContainer.querySelectorAll('.quiz-option-btn').forEach(button => {
             button.addEventListener('click', (event) => this.handleAnswerClick(event, this.currentQuestion));
@@ -139,18 +172,39 @@ class QuizEngine {
         if (quizQuestionMainContent) {
             quizQuestionMainContent.style.display = 'none';
         }
-
+         if (quizQuestionMainContent) {
+            quizQuestionMainContent.classList.add('fade-out');
+            quizQuestionMainContent.addEventListener('transitionend', () => {
+                quizQuestionMainContent.style.display = 'none';
+                quizQuestionMainContent.classList.remove('fade-out');
+            }, { once: true });
+        }
         if (feedbackArea) {
-            feedbackArea.style.display = 'block';
             feedbackArea.innerHTML = `
-                <p class="${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}">
+                <p class="${isCorrect ? 'feedback-correct' : 'feedback-incorrect'} feedback-message">
                     ${isCorrect ? (feedback.correct || '¡Correcto!') : (feedback.incorrect || 'Incorrecto.')}
                 </p>
                 ${explanationHTML ? `<div class="quiz-explanation">${explanationHTML}</div>` : ''}
                 <button id="continue-quiz-btn" class="btn btn-primary">Continuar</button>
             `;
+            const feedbackMessage = this.quizContainer.querySelector('.feedback-message');
+            const quizExplanation = this.quizContainer.querySelector('.quiz-explanation')
+            feedbackArea.style.display = 'block';
+            feedbackArea.classList.add('fade-in');
+            feedbackMessage.classList.add('fade-in');
+            quizExplanation.classList.add('fade-in');
             document.getElementById('continue-quiz-btn').addEventListener('click', () => {
-                this.moveToNextQuestion(isCorrect);
+                feedbackArea.classList.remove('fade-in');
+                feedbackMessage.classList.remove('fade-in');
+                quizExplanation.classList.remove('fade-in');
+                feedbackArea.classList.add('fade-out');
+                feedbackMessage.classList.add('fade-out');
+                quizExplanation.classList.add('fade-out');
+                feedbackArea.addEventListener('transitionend', () => {
+                    this.moveToNextQuestion(isCorrect);
+                    feedbackArea.style.display = 'none';
+                    feedbackArea.classList.remove('fade-out');
+                }, { once: true });
             });
         }
     }

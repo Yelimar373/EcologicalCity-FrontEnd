@@ -10,12 +10,11 @@
 <body>
     <%- include('partials/header', { currentPage: 'contact' }) %>
     <main>
-        <section class="page-hero contact-hero">
-            <div class="container">
-                <h1>Contáctanos</h1>
-                <p>¿Tienes preguntas, sugerencias o quieres colaborar? ¡Nos encantaría escucharte!</p>
-            </div>
-        </section>
+        <%- include('partials/_page-hero', {
+            title: `Contáctanos`,
+            subtitle: '¿Tienes preguntas, sugerencias o quieres colaborar? ¡Nos encantaría escucharte!',
+            additionalClass: 'contact-hero',
+        }) %>
         <section class="contact-section">
             <div class="container contact-grid">
                 <div class="contact-info">

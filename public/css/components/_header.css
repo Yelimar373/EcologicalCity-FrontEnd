@@ -1,9 +1,6 @@
 .main-header {
     background-color: var(--header-bg);
     padding: 15px 0;
-    /* box-shadow:
-    0 5px 8px rgba(0, 0, 0, 0.2),
-    0 12px 20px var(--color-white-base); */
     box-shadow: 0 5px 15px var(--header-bg);
     position: sticky;
     top: 0;

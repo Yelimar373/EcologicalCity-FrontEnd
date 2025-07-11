@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcologicalCity - El Juego</title>
+    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/pages/the-game.css">
 </head>
@@ -11,17 +12,16 @@
     <%- include('partials/header', { currentPage: 'the-game' }) %>
 
     <main>
-        <section id="hero-game" class="page-hero game-hero">
-            <div class="container hero-content">
-                <h1><strong>EcologicalCity:</strong> El Desafío Global en Tus Manos.</h1>
-                <h2>Presentamos una ambiciosa simulación de gestión urbana donde cada decisión propuesta redefine el futuro <em>sostenible</em> de tu civilización y del planeta.</h2>
-                <div class="hero-buttons">
-                    <a href="#vision" class="btn btn-primary">Explorar el Concepto</a>
-                </div>
-            </div>
-        </section>
+        <%- include('partials/_page-hero', {
+            title: `<strong>EcologicalCity:</strong> El Desafío Global en Tus Manos`,
+            subtitle: 'Presentamos una ambiciosa simulación de gestión urbana donde cada decisión propuesta redefine el futuro <strong>sostenible</strong> de tu civilización y del planeta.',
+            additionalClass: 'game-hero container-inset img-inset',
+            buttons: [
+                { href: '#vision', class: 'btn-primary', text: 'Explorar el Concepto' }
+            ]
+        }) %>
 
-        <section class="game-content-index">
+        <section class="game-content-index container-inset leaf-pattern-inset">
             <div class="container">
                 <nav class="index-nav">
                     <h3>Contenido de la Página</h3>
@@ -29,10 +29,10 @@
                         <li><a href="#vision">La Visión de EcologicalCity</a></li>
                         <li><a href="#game-mechanics">Conceptos Clave de Juego</a>
                             <ul>
-                                <li><a href="#map-societies">El Mapa Vivo: Interdependencia Urbana</a></li>
-                                <li><a href="#buildings-connections">Ecosistema Urbano: Edificios y Conexiones Estratégicas</a></li>
-                                <li><a href="#tech-progress">Tecnología y Progreso Sostenible</a></li>
-                                <li><a href="#consequences">Consecuencias Reales: El Impacto de Tus Decisiones</a></li>
+                                <li><a href="#map-alive">El Mapa Vivo: Interdependencia Urbana</a></li>
+                                <li><a href="#urban-ecosystem">Ecosistema Urbano: Edificios y Conexiones Estratégicas</a></li>
+                                <li><a href="#sustainable-technology">Tecnología y Progreso Sostenible</a></li>
+                                <li><a href="#real-consequences">Consecuencias Reales: El Impacto de Tus Decisiones</a></li>
                             </ul>
                         </li>
                         <li><a href="#educational-impact">La Educación a Través del Juego</a></li>
@@ -43,65 +43,126 @@
             </div>
         </section>
 
-        <section id="vision" class="game-section container">
-            <h2>La Visión de EcologicalCity</h2>
-            <p>En un mundo donde la <strong>sostenibilidad</strong> es más que una palabra, <strong>EcologicalCity</strong> se concibe como una herramienta poderosa para el cambio. Nuestro proyecto es una propuesta para un innovador simulador de gestión urbana diseñado para trascender el entretenimiento, buscando ser una plataforma interactiva que fusiona la diversión del juego con una profunda <em>educación ambiental</em>. Se propone empoderar a los jugadores para que experimenten, de primera mano, la complejidad y las interconexiones del <strong>desarrollo sostenible</strong>. Cada decisión que se tome en EcologicalCity tendrá un impacto directo y realista en el equilibrio ecológico, social y económico de su civilización, forjando una conciencia vital sobre el futuro de nuestro planeta.</p>
+        <section id="vision" class="section-content container">
+            <h2 data-aos="fade-up">La Visión de EcologicalCity</h2 data-aos="fade-up">
+            <div class="vision-content">
+                <p>Nuestra visión trasciende la mera idea de un videojuego; aspiramos a crear una <strong>plataforma interactiva y educativa</strong> que inspire a una nueva generación a <em>comprender y actuar</em> frente a los desafíos ambientales más apremiantes de nuestro tiempo. Queremos demostrar que la diversión y el aprendizaje pueden coexistir, y que cada decisión, por pequeña que parezca en el juego, tiene un <em>eco significativo</em> en el futuro del planeta.</p>
+                <div class="vision-image-block">
+                    <img src="/assets/img/the-game/vision/vision.jpeg" alt="Concepto de visión para EcologicalCity: un futuro sostenible">
+                </div> 
+            </div>
+            <p>Nuestro objetivo es fomentar el <strong>pensamiento crítico, la planificación estratégica y la empatía ambiental</strong>. Creemos firmemente que al permitir a los jugadores modelar sus propias ciudades y enfrentar <em>dilemas ecológicos simulados</em>, no solo se divertirán, sino que también desarrollarán una comprensión más profunda de la <em>interconexión entre la acción humana y la salud planetaria</em>. Es una invitación a ser parte de la <strong>solución</strong>, a visualizar un <em>futuro más verde</em> y a entender que, como <strong>ciudadanos globales</strong>, tenemos el poder de <em>construirlo</em>.</p>
         </section>
 
-        <section id="game-mechanics" class="game-section container">
-            <h2>Conceptos Clave de Juego</h2>
-            <p><strong>EcologicalCity</strong> busca sumergir al jugador en una simulación compleja y dinámica donde cada decisión tendrá un peso significativo. Se ha conceptualizado un sistema de juego que reflejará la interdependencia del mundo real, impulsando al jugador a pensar estratégicamente y a largo plazo. Aquí, la meta no será solo construir la ciudad más grande, sino la más <strong>resiliente y sostenible</strong>.</p>
+        <section id="game-mechanics" class="section-content container">
+            <h2 data-aos="fade-up">Conceptos Clave de Juego</h2>
+            <p class="lead" data-aos="fade-up"><strong>EcologicalCity</strong> busca sumergir al jugador en una simulación compleja y dinámica donde cada decisión tendrá un peso significativo. Se ha conceptualizado un sistema de juego que reflejará la interdependencia del mundo real, impulsando al jugador a pensar estratégicamente y a largo plazo. Aquí, la meta no será solo construir la ciudad más grande, sino la más <strong>resiliente y sostenible</strong>.</p>
 
-            <div id="map-societies" class="game-mechanic-block">
-                <h3>El Mapa Vivo: Interdependencia Urbana</h3>
-                <p>Imagina tu metrópolis como un organismo vivo, con zonas que respiran y evolucionan de manera diferenciada, reflejando la diversidad y las complejidades de las ciudades reales. En <strong>EcologicalCity</strong>, una única y vasta urbe podrá contener distritos o sectores que se desarrollan de forma desigual, similar a los 'estratos' socioeconómicos que observamos en la vida real. Aunque parezcan distantes, estas áreas estarán intrínsecamente conectadas y sus condiciones de vida, educación y oportunidades de trabajo se afectarán mutuamente, positiva o negativamente. Las decisiones en un extremo de la ciudad podrán tener un efecto dominó en el otro, impactando tanto en el bienestar de la sociedad como en el frágil entorno natural que la rodea.</p>
+            <div class="mechanics-blocks">
+                <div class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mechanic-visual">
+                        <img src="/assets/img/the-game/mechanics/mapa-vivo.webp" alt="Representación de un mapa de ciudad viva con zonas interconectadas, indicando flujos de recursos y población.">
+                    </div>
+                    <div class="mechanic-info">
+                        <h3>El Mapa Vivo: Interdependencia Urbana</h3>
+                        <p>Imagina tu metrópolis como un organismo vivo, con zonas que respiran y evolucionan de manera diferenciada, reflejando la diversidad y las complejidades de las ciudades reales. En <strong>EcologicalCity</strong>, una única y vasta urbe podrá contener distritos o sectores que se desarrollan de forma desigual, similar a los 'estratos' socioeconómicos que observamos en la vida real. Aunque parezcan distantes, estas áreas estarán intrínsecamente <strong>conectadas</strong> y sus condiciones de vida, educación y oportunidades de trabajo se afectarán mutuamente, positiva o negativamente. Las decisiones en un extremo de la ciudad podrán tener un <em>efecto dominó</em> en el otro, impactando tanto en el bienestar de la sociedad como en el frágil entorno natural que la rodea.</p>
+                    </div>
                 </div>
 
-            <div id="buildings-connections" class="game-mechanic-block">
-                <h3>Ecosistema Urbano: Edificios y Conexiones Estratégicas</h3>
-                <p>En EcologicalCity, la construcción es solo el primer paso. La verdadera maestría radicará en cómo orquestas la <strong>red vital de tu ciudad</strong> a través de la interconexión de edificios. Se ha planteado un sistema donde cada estructura, desde una simple vivienda hasta una compleja central energética, tendrá un rol definido como <strong>productor</strong> o <strong>consumidor</strong> de recursos y servicios.</p>
-                <ul>
-                    <li><strong>Edificios Productores:</strong> Generarán los recursos vitales: energía (solar, eólica), agua (plantas potabilizadoras), alimentos (granjas hidropónicas), y materias primas (instalaciones de reciclaje).</li>
-                    <li><strong>Edificios Consumidores:</strong> Utilizarán estos recursos y, a su vez, podrán generar habitantes, servicios (salud, educación, seguridad) o gestionar residuos. Por ejemplo, una vivienda consumirá energía y agua, pero producirá habitantes y generará demanda de servicios.</li>
-                </ul>
-                <p>La innovación clave residirá en el concepto de <strong>'Áreas de Conexión'.</strong> Cada edificio proyectará una zona de influencia. Cuando las áreas de dos o más edificios se solapen, se establecerá una conexión funcional, permitiendo el flujo de recursos y el acceso a servicios, siempre y cuando sus capacidades lo permitan. Una planificación inteligente del espacio y la interconexión será <strong>crucial</strong> para el crecimiento equilibrado y <em>sostenible</em> de tu ciudad, asegurando que las necesidades de tus ciudadanos se satisfagan sin agotar el entorno.</p>
+                <div class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mechanic-visual">
+                        <img src="/assets/img/the-game/mechanics/ecosistema-urbano.webp" alt="Diagrama de edificios interconectados mostrando flujos de producción y consumo de recursos.">
+                    </div>
+                    <div class="mechanic-info">
+                        <h3>Ecosistema Urbano: Edificios y Conexiones Estratégicas</h3>
+                        <p>En EcologicalCity, la construcción es solo el primer paso. La verdadera maestría radicará en cómo orquestas la <strong>red vital de tu ciudad</strong> a través de la interconexión de edificios. Se ha planteado un sistema donde cada estructura, desde una simple vivienda hasta una compleja central energética, tendrá un rol definido como <strong>productor</strong> o <strong>consumidor</strong> de recursos y servicios.</p>
+                        <ul>
+                            <li><strong>Edificios Productores:</strong> Generarán los <em>recursos vitales</em>: energía (solar, eólica), agua (plantas potabilizadoras), alimentos (granjas hidropónicas), y materias primas (instalaciones de reciclaje).</li>
+                            <li><strong>Edificios Consumidores:</strong> Utilizarán estos recursos y, a su vez, podrán generar habitantes, servicios (salud, educación, seguridad) o gestionar residuos. Por ejemplo, una vivienda consumirá energía y agua, pero producirá habitantes y generará demanda de servicios.</li>
+                        </ul>
+                        <p>La innovación clave residirá en el concepto de <strong>'Áreas de Conexión'</strong>. Cada edificio proyectará una zona de influencia. Cuando las áreas de dos o más edificios se solapen, se establecerá una conexión funcional, permitiendo el flujo de recursos y el acceso a servicios, siempre y cuando sus capacidades lo permitan. Una planificación inteligente del espacio y la interconexión será <strong>crucial</strong> para el crecimiento equilibrado y <em>sostenible</em> de tu ciudad, asegurando que las necesidades de tus ciudadanos se satisfagan sin agotar el entorno.</p>
+                    </div>
                 </div>
 
-            <div id="tech-progress" class="game-mechanic-block">
-                <h3>Tecnología y Progreso Sostenible</h3>
-                <p>El avance de tu sociedad en EcologicalCity estará directamente ligado a tu inversión en <strong>investigación y educación</strong>. A medida que tu sociedad evolucione, se desbloqueará un árbol tecnológico que te dará acceso a edificios más eficientes y a soluciones innovadoras para los desafíos ambientales. Desde la optimización de los sistemas de transporte hasta el desarrollo de nuevas formas de energía renovable, cada progreso tecnológico abrirá puertas hacia un futuro más verde y <em>próspero</em>. La toma de decisiones informada sobre qué tecnologías priorizar será <strong>crucial</strong> para mitigar el impacto ambiental y asegurar la viabilidad a largo plazo de tu urbe.</p>
+                <div class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mechanic-visual">
+                        <img src="/assets/img/the-game/mechanics/tecnologia-sostenible.webp" alt="Representación de un árbol tecnológico o nodos de investigación con iconos de energía renovable, transporte verde.">
+                    </div>
+                    <div class="mechanic-info">
+                        <h3>Tecnología y Progreso Sostenible</h3>
+                        <p>El avance de tu sociedad en EcologicalCity estará directamente ligado a tu inversión en <strong>investigación y educación</strong>. A medida que tu sociedad evolucione, se desbloqueará un árbol tecnológico que te dará acceso a edificios más eficientes y a soluciones innovadoras para los desafíos ambientales. Desde la optimización de los sistemas de transporte hasta el desarrollo de nuevas formas de energía renovable, cada progreso tecnológico abrirá puertas hacia un futuro más verde y <em>próspero</em>. La toma de decisiones informada sobre qué tecnologías priorizar será <strong>crucial</strong> para mitigar el impacto ambiental y asegurar la viabilidad a largo plazo de tu urbe.</p>
+                    </div>
                 </div>
 
-            <div id="consequences" class="game-mechanic-block">
-                <h3>Consecuencias Reales: El Impacto de Tus Decisiones</h3>
-                <p>En <strong>EcologicalCity</strong>, tus acciones tendrán repercusiones <em>tangibles</em> y a menudo profundas en el delicado equilibrio entre la sociedad, la economía y el medio ambiente. Un manejo irresponsable de los recursos, una alta contaminación o una planificación urbana deficiente podrán desencadenar una serie de eventos catastróficos:</p>
-                <ul>
-                    <li><strong>Degradación Ambiental:</strong> Pérdida de biodiversidad, desertificación, contaminación del agua y el aire, haciendo que la vida sea insostenible.</li>
-                    <li><strong>Crisis de Salud Pública:</strong> Brotes de enfermedades, disminución de la calidad de vida y una población insatisfecha.</li>
-                    <li><strong>Declive Socioeconómico:</strong> Disminución de la productividad, migración de ciudadanos, y una economía en recesión.</li>
-                </ul>
-                <p>Por el contrario, un enfoque proactivo en la <strong>sostenibilidad</strong>, la inversión en tecnologías verdes y una planificación urbana inteligente resultarán en una ciudad floreciente con aire y agua limpios, una población sana y feliz, una economía robusta y un ecosistema vibrante. El juego simulará el efecto acumulativo de estas decisiones, demostrando que la <strong>sostenibilidad no es una opción, sino una necesidad para la prosperidad a largo plazo</strong>.</p>
+                <div class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mechanic-visual">
+                        <img src="/assets/img/the-game/mechanics/consecuencias-reales.webp" alt="Ciudad dividida mostrando un lado deteriorado por la contaminación y otro lado próspero y verde.">
+                    </div>
+                    <div class="mechanic-info">
+                        <h3>Consecuencias Reales: El Impacto de Tus Decisiones</h3>
+                        <p>En <strong>EcologicalCity</strong>, tus acciones tendrán repercusiones <em>tangibles</em> y a menudo profundas en el delicado equilibrio entre la sociedad, la economía y el medio ambiente. Un manejo irresponsable de los recursos, una alta contaminación o una planificación urbana deficiente podrán desencadenar una serie de eventos catastróficos:</p>
+                        <ul>
+                            <li><strong>Degradación Ambiental:</strong> Pérdida de biodiversidad, desertificación, contaminación del agua y el aire, haciendo que la vida sea insostenible.</li>
+                            <li><strong>Crisis de Salud Pública:</strong> Brotes de enfermedades, disminución de la calidad de vida y una población insatisfecha.</li>
+                            <li><strong>Declive Socioeconómico:</strong> Disminución de la productividad, migración de ciudadanos, y una economía en recesión.</li>
+                        </ul>
+                        <p>Por el contrario, un enfoque proactivo en la <strong>sostenibilidad</strong>, la inversión en tecnologías verdes y una planificación urbana inteligente resultarán en una ciudad floreciente con aire y agua limpios, una población sana y feliz, una economía robusta y un ecosistema vibrante. El juego simulará el efecto acumulativo de estas decisiones, demostrando que la <strong>sostenibilidad no es una opción, sino una necesidad para la prosperidad a largo plazo</strong>.</p>
+                    </div>
                 </div>
+            </div>
         </section>
 
-        <section id="educational-impact" class="game-section container">
-            <h2>La Educación a Través del Juego</h2>
-            <p>Creemos firmemente en el poder del juego como vehículo para el aprendizaje. <strong>EcologicalCity</strong> se proyecta como más que un pasatiempo; será una experiencia educativa <em>inmersiva</em> que fomentará:</p>
-            <ul>
-                <li><strong>Conciencia Ambiental:</strong> Al enfrentar desafíos realistas, los jugadores desarrollarán una comprensión más profunda de los problemas ambientales y la importancia de la <strong>sostenibilidad</strong>.</li>
-                <li><strong>Pensamiento Crítico y Sistémico:</strong> El juego promoverá la resolución de problemas complejos, la anticipación de consecuencias y la comprensión de cómo diferentes elementos (social, económico, ambiental) interactúan entre sí.</li>
-                <li><strong>Toma de Decisiones Responsable:</strong> Cada elección impactará en el bienestar de la ciudad y el planeta, enseñando el valor de la planificación a largo plazo y las decisiones éticas.</li>
-                <li><strong>Empatía por el Futuro:</strong> Los jugadores conectarán de forma personal con el impacto de sus acciones en un entorno simulado, traduciéndose en una mayor conciencia en la vida real.</li>
-            </ul>
+        <section id="educational-impact" class="section-content container">
+            <h2 data-aos="fade-up" data-aos="fade-up">El Impacto Educativo de EcologicalCity</h2 data-aos="fade-up">
+            <p class="lead animate-on-scroll">Creemos firmemente en el poder del juego como vehículo para el aprendizaje. <strong>EcologicalCity</strong> se proyecta como más que un pasatiempo; será una experiencia educativa <em>inmersiva</em> que fomentará:</p>
+            <div class="container text-center">
+                <div class="impact-grid">
+                    <div class="impact-card card animate-on-scroll">
+                    <picture>
+                        <source srcset="/assets/icons/leaf/leaf.webp" type="image/webp">
+                        <source srcset="/assets/icons/leaf/leaf.png" type="image/png">
+                        <img src="/assets/icons/leaf/leaf.png" alt="leaf Icon" loading="lazy">
+                    </picture>
+                        <h3>Conciencia Ambiental</h3>
+                        <p>Al enfrentar desafíos realistas, los jugadores desarrollarán una comprensión más profunda de los problemas ambientales y la importancia de la <strong>sostenibilidad</strong>.</p>
+                    </div>
+
+                    <div class="impact-card card animate-on-scroll">
+                        <picture>
+                        <source srcset="/assets/icons/brain/brain.webp" type="image/webp">
+                        <source srcset="/assets/icons/brain/brain.png" type="image/png">
+                        <img src="/assets/icons/brain/brain.png" alt="brain Icon" loading="lazy">
+                    </picture>
+                        <h3>Pensamiento Crítico y Sistémico</h3>
+                        <p>El juego promoverá la resolución de problemas complejos, la anticipación de consecuencias y la comprensión de cómo diferentes elementos (social, económico, ambiental) interactúan entre sí.</p>
+                    </div>
+
+                    <div class="impact-card card animate-on-scroll">
+                        <div class="impact-icon">
+                            <img src="/assets/icons/decision.svg" alt="Icono de Toma de Decisiones">
+                        </div>
+                        <h3>Toma de Decisiones Responsable</h3>
+                        <p>Cada elección impactará en el bienestar de la ciudad y el planeta, enseñando el valor de la planificación a largo plazo y las decisiones éticas.</p>
+                    </div>
+
+                    <div class="impact-card card animate-on-scroll">
+                        <div class="impact-icon">
+                            <img src="/assets/icons/empathy.svg" alt="Icono de Empatía">
+                        </div>
+                        <h3>Empatía por el Futuro</h3>
+                        <p>Los jugadores conectarán de forma personal con el impacto de sus acciones en un entorno simulado, traduciéndose en una mayor conciencia en la vida real.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="future-roadmap" class="game-section container">
-            <h2>El Futuro de EcologicalCity: Próximos Pasos</h2>
+        <section id="future-roadmap" class="section-content container">
+            <h2 data-aos="fade-up">El Futuro de EcologicalCity: Próximos Pasos</h2 data-aos="fade-up">
             <p>Este sitio web es solo el comienzo. <strong>EcologicalCity</strong> es un proyecto en constante evolución, impulsado por la pasión por la innovación y la <strong>sostenibilidad</strong>. Nuestro objetivo principal es lograr el <strong>desarrollo completo de esta ambiciosa idea</strong>, incorporando gradualmente todas las mecánicas, tecnologías y escenarios que la harán una experiencia educativa profunda y <em>cautivadora</em>. Visualizamos que, con dedicación y el apoyo adecuado, <strong>EcologicalCity</strong> se convertirá en una herramienta robusta para la conciencia ambiental. Queremos construir una comunidad de jugadores comprometidos que nos ayuden a dar forma al futuro de la conciencia ambiental a través del juego.</p>
         </section>
 
-        <section id="challenge" class="quiz-game-section container">
-            <h2>Desafía Tus Conocimientos</h2>
+        <section id="challenge" class="quiz-game-section container container-inset leaf-pattern-inset ">
+            <h2 data-aos="fade-up">Desafía Tus Conocimientos</h2>
             <p>Antes de que te sumerjas por completo en la gestión de tu propia ciudad, ¿qué tan preparado estás para enfrentar los desafíos de la sostenibilidad? ¡Participa en nuestra breve trivia y descúbrelo! Las preguntas estarán diseñadas para evaluar conceptos que, aunque puedan parecer académicos, serán <strong>fundamentales</strong> para tomar las mejores decisiones y alcanzar el <strong>éxito en EcologicalCity</strong>.</p>
             <div class="container quiz-main-content-wrapper">   
                 <div class="text-center">
@@ -117,9 +178,17 @@
         </section>
 
     </main>
-    <%- include('partials/footer', { currentPage: 'the-game', atrribution: false }) %>
+    <%- include('partials/footer', { currentPage: 'the-game', atrribution: '<div> Iconos diseñados por <a href="https://www.flaticon.es/autores/adury5711" title="Adury5711"> Adury5711 </a> & <a href="https://www.flaticon.es/autores/prosymbols-premium" title="Prosymbols Premium"> Prosymbols Premium </a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>' }) %>
     <script src="/js/script.js"></script>
     <script src="js/pages/quizData.js"></script>
     <script src="/js/pages/the-game.js"></script>
+    <script src="/node_modules/aos/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 200,
+        });
+    </script>
 </body>
 </html>

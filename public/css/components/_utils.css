@@ -41,6 +41,20 @@
     transform: translateY(-3px) scale(1.02); /* Efecto de "pulse" y elevación */
     text-shadow: 0 0 10px var(--color-secondary-orange); /* Intensifica el text-shadow con el color secundario */
 }
+.btn-third {
+    background-color: var(--color-secondary-brown);
+    color: var(--color-white-base);
+    border-color: var(--color-secondary-brown);
+}
+.btn-third:hover {
+    color: var(--color-white-base);
+    border-color: var(--color-secondary-brown);
+    /* Nuevo efecto de glow */
+    box-shadow: 0 0 10px rgba(var(--color-secondary-brown-rgb), 0.6), /* Sombra más suave y color secundario */
+                0 0 20px rgba(var(--color-secondary-brown-rgb), 0.4);
+    transform: translateY(-3px) scale(1.02); /* Efecto de "pulse" y elevación */
+    text-shadow: 0 0 10px var(--color-secondary-brown); /* Intensifica el text-shadow con el color secundario */
+}
 a.btn,
 a:visited.btn{
     color: var(--color-white-base);
@@ -52,7 +66,7 @@ a:visited.btn{
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 8px 20px 2px rgba(var(--color-black-base-rgb), 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .card img,
@@ -112,6 +126,36 @@ a:visited.btn{
     width: 50px;
     stroke: currentColor;
 }
+.container-inset {
+    --shadow-inset: linear-gradient(to top, var(--header-bg) 10%, transparent 60%), linear-gradient(to bottom, var(--header-bg) 0%, transparent 60%);
+    position: relative;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    &.img-inset{
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &.img-inset::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;    
+        right: 0;
+        bottom: 0;
+        background-image: var(--shadow-inset);
+        background-color: rgba(0, 0, 0, 0.2); 
+        z-index: 1;
+    }
+    &.leaf-pattern-inset{
+        background-color: var(--header-bg);
+        background-image: var(--shadow-inset), var(--leaf-pattern);
+        background-repeat: repeat;
+        background-position: center center;
+    }
+}
 .ghost-text {
     color: transparent;
     text-shadow: none;
@@ -119,6 +163,30 @@ a:visited.btn{
 .noStyleText{
     color: inherit;
     text-decoration: inherit;
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.8s ease-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 @media (max-width: 830px) {
     .btn {
