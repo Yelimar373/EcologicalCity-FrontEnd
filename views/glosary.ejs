@@ -8,41 +8,78 @@
     <link rel="stylesheet" href="/css/pages/glosary.css">
 </head>
 <body>
+
     <%- include('partials/header', { currentPage: 'glosary' }) %>
+
     <main>
-        <section class="page-hero">
+        <section class="page-hero" style="background-image: url('/assets/img/glosary/hero-glosary.avif');">
             <div class="container">
-                <h1>Glosario de Términos Ambientales</h1>
-                <p>Explora y comprende los conceptos clave de la sostenibilidad y el proyecto EcologicalCity.</p>
+                <h1 class="animate-hero-h1">Glosario de Términos</h1>
+                <p class="animate-hero-p">Explora los conceptos clave de sostenibilidad y medio ambiente.</p>
             </div>
         </section>
 
-        <section class="glosary-section container">
-            <div class="glosary-controls">
-                <input type="text" id="searchInput" placeholder="Buscar concepto..." aria-label="Buscar concepto en el glosario">
-                <div class="alphabet-filter">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="A">A</button>
-                    <button class="filter-btn" data-filter="B">B</button>
-                    </div>
-            </div>
+        <section class="game-content-index section-content">
+            <div class="container">
+                <div class="index-nav">
+                    <h3>Navegación del Glosario</h3>
+                    <ul>
+                        <li><a href="#A">A</a></li>
+                        <li><a href="#B">B</a></li>
+                        <li><a href="#C">C</a></li>
+                        <li><a href="#D">D</a></li>
+                        <li><a href="#E">E</a></li>
+                        <li><a href="#F">F</a></li>
+                        <li><a href="#G">G</a></li>
+                        <li><a href="#H">H</a></li>
+                        <li><a href="#I">I</a></li>
+                        <li><a href="#J">J</a></li>
+                        <li><a href="#K">K</a></li>
+                        <li><a href="#L">L</a></li>
+                        <li><a href="#M">M</a></li>
+                        <li><a href="#N">N</a></li>
+                        <li><a href="#O">O</a></li>
+                        <li><a href="#P">P</a></li>
+                        <li><a href="#Q">Q</a></li>
+                        <li><a href="#R">R</a></li>
+                        <li><a href="#S">S</a></li>
+                        <li><a href="#T">T</a></li>
+                        <li><a href="#U">U</a></li>
+                        <li><a href="#V">V</a></li>
+                        <li><a href="#W">W</a></li>
+                        <li><a href="#X">X</a></li>
+                        <li><a href="#Y">Y</a></li>
+                        <li><a href="#Z">Z</a></li>
+                    </ul>
+                </div>
 
-            <div class="glosary-content-area">
-                <ul id="glosaryTermsList" class="glosary-terms-list">
-                    <li data-term-id="biodiversidad">Biodiversidad</li>
-                    <li data-term-id="huella-carbono">Huella de Carbono</li>
-                    <li data-term-id="sostenibilidad">Sostenibilidad</li>
-                </ul>
+                <div class="glosary-terms-container">
+                    <section id="A" class="glosary-letter-section">
+                        <h2>A</h2>
+                        <div class="term-item">
+                            <h3><a id="agua-dulce" class="noStyleText">Agua Dulce</a></h3>
+                            <p>Agua que contiene mínimas cantidades de sales disueltas, encontrándose en ríos, lagos, glaciares y aguas subterráneas. Es esencial para la vida y los ecosistemas terrestres.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3><a id="almacenamiento-energia" class="noStyleText">Almacenamiento de Energía</a></h3>
+                            <p>Sistemas y tecnologías que permiten guardar la energía generada para ser utilizada en un momento posterior, crucial para la gestión de energías renovables intermitentes como la solar y la eólica.</p>
+                        </div>
+                    </section>
 
-                <div id="glosaryDefinitionDisplay" class="glosary-definition-display">
-                    <h2>Selecciona un término para ver su definición</h2>
-                    <p>Utiliza la barra de búsqueda o el filtro alfabético para encontrar lo que necesitas.</p>
-                    </div>
-            </div>
-        </section>
-    </main>
-    <%- include('partials/footer', { currentPage: 'glosary', atrribution: false }) %>
-    <script src="/js/script.js"></script>
-    <script src="/js/glosary.js"></script>
-</body>
-</html>
+                    <section id="B" class="glosary-letter-section">
+                        <h2>B</h2>
+                        <div class="term-item">
+                            <h3><a id="biodiversidad" class="noStyleText">Biodiversidad</a></h3>
+                            <p>Variedad de vida en la Tierra, incluyendo la diversidad de genes, especies y ecosistemas. Es fundamental para la salud del planeta y los servicios ecosistémicos.</p>
+                        </div>
+                        <div class="term-item">
+                            <h3><a id="biomasa" class="noStyleText">Biomasa</a></h3>
+                            <p>Materia orgánica de origen vegetal o animal, incluyendo residuos agrícolas, forestales, urbanos, y cultivos energéticos. Se utiliza como fuente de energía renovable para producir calor, electricidad o biocombustibles.</p>
+                        </div>
+                    </section>
+
+                    <section id="C" class="glosary-letter-section">
+                        <h2>C</h2>
+                        <div class="term-item">
+                            <h3><a id="cambio-climatico" class="noStyleText">Cambio Climático</a></h3>
+                            <p>Alteración significativa y duradera de los patrones climáticos globales o regionales. Se refiere principalmente al calentamiento global actual

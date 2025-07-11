@@ -1,189 +1,111 @@
-/* Importa tus variables y fuentes si es necesario, aunque styles.css ya lo hace */
+/* glosary.css */
 
-/* --- Hero Página Glosario (similar a contact.css) --- */
-.page-hero {
-    background-color: var(--color-black-base);
-    color: var(--color-white-base);
-    padding: 80px 0;
+/* Estilos específicos para la sección del glosario */
+.glosary-terms-container {
+    padding: 20px 0;
+}
+
+.glosary-letter-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.2);
+}
+
+.glosary-letter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.glosary-letter-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 30px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    padding-bottom: 10px;
 }
 
-.page-hero::before {
+.glosary-letter-section h2::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Overlay sutil */
-    z-index: 1;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secondary-orange);
+    border-radius: 2px;
 }
 
-.page-hero .container {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.page-hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: var(--color-white-base);
-}
-
-.page-hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    color: var(--color-white-base);
-    opacity: 0.9;
-}
-
-/* --- Sección Principal del Glosario --- */
-.glosary-section {
-    padding: 80px 0;
-    display: flex;
-    flex-direction: column; /* Por defecto, apilado en móvil */
-    gap: 40px;
-}
-
-.glosary-controls {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    gap: 15px;
-    margin-bottom: 30px;
-    align-items: center;
-    justify-content: center;
-}
-
-#searchInput {
-    padding: 12px 15px;
-    border: 1px solid #ccc;
+.term-item {
+    background-color: var(--background-color);
+    border: 1px solid rgba(var(--color-black-base-rgb), 0.1);
+    border-left: 5px solid var(--color-primary);
     border-radius: 8px;
-    font-size: 1rem;
-    flex-grow: 1; /* Permite que la barra de búsqueda ocupe espacio */
-    max-width: 400px; /* Ancho máximo para la barra de búsqueda */
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.alphabet-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
+.term-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.alphabet-filter .filter-btn {
-    background-color: var(--color-white-base);
+.term-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--color-black-base);
-    border: 1px solid var(--color-primary);
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+    padding-top: 5px; /* Para compensar el ancla */
 }
 
-.alphabet-filter .filter-btn:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white-base);
-}
-
-.alphabet-filter .filter-btn.active {
-    background-color: var(--color-primary);
-    color: var(--color-white-base);
-    border-color: var(--color-primary);
-}
-
-.glosary-content-area {
-    display: flex;
-    gap: 40px;
-}
-
-.glosary-terms-list {
-    flex: 1; /* Ocupa una parte del espacio disponible */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 600px; /* Altura máxima con scroll si hay muchos términos */
-    overflow-y: auto;
-    border-right: 1px solid #eee; /* Separador visual */
-    padding-right: 30px;
-}
-
-.glosary-terms-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.glosary-terms-list li:last-child {
-    border-bottom: none;
-}
-
-.glosary-terms-list li:hover,
-.glosary-terms-list li.active {
-    background-color: rgba(var(--color-primary-rgb, 11, 171, 17), 0.1); /* Ligero verde de fondo */
-    color: var(--color-primary);
-    padding-left: 10px; /* Efecto visual al seleccionar */
-}
-
-.glosary-definition-display {
-    flex: 2; /* Ocupa más espacio, ideal para la definición */
-    padding-left: 30px;
-}
-
-.glosary-definition-display h2 {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 15px;
-}
-
-.glosary-definition-display p {
+.term-item p {
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.7;
+    color: var(--text-color);
 }
 
-/* --- Media Queries para Responsive Design (ajustar según tus breakpoints) --- */
-@media (max-width: 992px) {
-    .glosary-content-area {
-        flex-direction: column; /* Apila la lista y la definición en pantallas pequeñas */
-        gap: 30px;
-    }
-
-    .glosary-terms-list {
-        border-right: none;
-        border-bottom: 1px solid #eee; /* Separador horizontal */
-        padding-right: 0;
-        padding-bottom: 20px;
-        max-height: 400px; /* Ajusta la altura máxima para la lista en móvil */
-    }
-
-    .glosary-definition-display {
-        padding-left: 0;
-        text-align: center; /* Centra el texto de la definición en móvil */
-    }
-
-    #searchInput {
-        width: 100%;
-        max-width: unset;
-    }
+/* Ajustes para el page-hero en la página de glosario */
+.page-hero {
+    min-height: 50vh; /* Ajusta la altura del hero para el glosario */
+    background-position: center center !important; /* Asegura que la imagen de fondo esté centrada */
 }
 
+/* Media Queries para responsividad */
 @media (max-width: 768px) {
-    .glosary-section {
-        padding: 50px 0;
+    .glosary-letter-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
-    .page-hero h1 {
-        font-size: 2.5rem;
+
+    .term-item h3 {
+        font-size: 1.5rem;
     }
-    .page-hero p {
-        font-size: 1rem;
+
+    .glosary-letter-section {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glosary-letter-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .term-item {
+        padding: 15px 20px;
+    }
+
+    .term-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .glosary-terms-container {
+        padding: 10px 0;
     }
 }
