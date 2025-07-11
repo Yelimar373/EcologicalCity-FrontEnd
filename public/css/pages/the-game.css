@@ -3,6 +3,8 @@
     Hero Section Específico para 'El Juego'
 ========================================================================== */
 .game-hero {
+    background-position: 50% 10%;
+    background-origin: border-box;
     background-image: image-set(
         url("/assets/img/the-game/hero/hero.avif") type("image/avif"),
         url('/assets/img/the-game/hero/hero.webp') type('image/webp'),
@@ -156,13 +158,6 @@
 /* --- Mecanismos del Juego --- */
 .section-game-mechanics {
     padding: 80px 0;
-    background-color: var(--background-color); /* Fondo sólido */
-}
-
-.section-game-mechanics h2 {
-    color: var(--color-primary); /* Título principal en verde */
-    margin-bottom: 20px;
-    font-size: 2.5rem;
 }
 
 .section-game-mechanics .lead {
@@ -177,7 +172,7 @@
 .mechanics-blocks {
     display: flex;
     flex-direction: column;
-    gap: 80px; /* Espacio entre cada bloque de mecánica */
+    gap: 80px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -185,26 +180,21 @@
 .mechanic-block {
     display: flex;
     align-items: center;
-    gap: 50px; /* Espacio entre imagen y texto */
-    padding: 20px; /* Un padding sutil alrededor del bloque */
+    gap: 50px;
+    padding: 20px;
     border-radius: 12px;
-    background-color: var(--color-white-base); /* Un fondo claro para la sección */
-    box-shadow: 0 10px 30px rgba(var(--color-black-base-rgb), 0.05); /* Sombra suave */
-    transition: box-shadow 0.3s ease; /* Transición para la sombra al pasar el ratón */
-}
-
-.mechanic-block:hover {
-    box-shadow: 0 15px 40px rgba(var(--color-black-base-rgb), 0.1); /* Sombra ligeramente más prominente */
+    box-shadow: 0 15px 40px rgba(var(--color-black-base-rgb), 0.1);
+    transition: box-shadow 0.3s ease; 
 }
 
 .mechanic-block.reverse {
-    flex-direction: row-reverse; /* Invertir orden para la alternancia */
+    flex-direction: row-reverse;
 }
 
 .mechanic-visual {
     flex: 1;
-    min-width: 40%; /* La imagen toma al menos el 40% del ancho */
-    max-width: 50%; /* La imagen toma como máximo el 50% del ancho */
+    min-width: 40%; 
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,25 +203,25 @@
 .mechanic-visual img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Bordes ligeramente redondeados para las imágenes */
+    border-radius: 8px;
     box-shadow: 0 5px 15px rgba(var(--color-black-base-rgb), 0.1);
     transition: transform 0.3s ease;
 }
 
 .mechanic-block:hover .mechanic-visual img {
-    transform: scale(1.02); /* Ligero zoom al hacer hover en el bloque */
+    transform: scale(1.02); 
 }
 
 
 .mechanic-info {
-    flex: 1.5; /* El texto toma más espacio que la imagen */
+    flex: 1.5; 
     max-width: 60%;
-    text-align: left; /* Alineación de texto por defecto */
-    padding: 20px 0; /* Padding vertical para el contenido */
+    text-align: left; 
+    padding: 20px 0; 
 }
 
 .mechanic-info h3 {
-    font-size: 2rem; /* Títulos de las mecánicas más grandes */
+    font-size: 2rem;
     color: var(--color-primary);
     margin-bottom: 15px;
     font-weight: 700;
@@ -254,23 +244,21 @@
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 8px;
-    padding-left: 30px; /* Espacio para el icono de la lista */
+    padding-left: 30px;
     position: relative;
     color: var(--text-color);
 }
 
 .mechanic-info ul li::before {
-    content: '🌱'; /* Ícono de hoja de tu estilo anterior */
+    content: '🌱';
     position: absolute;
     left: 0;
-    color: var(--color-secondary-orange); /* Color naranja para el icono */
     font-size: 1.2rem;
     top: 0;
 }
 
 .section-educational-impact {
-    padding: 80px 0; /* Ajusta el padding según necesites */
-    background-color: var(--background-color); /* Usa el color de fondo base para evitar saturación */
+    padding: 80px 0;
 }
 .section-educational-impact .lead {
     max-width: 800px;
@@ -297,7 +285,6 @@
    3. Estilos Específicos del Quiz
    ========================================================================== */
 
-/* Contenedor principal del Quiz: Fondo Oscuro con Patrón */
 .quiz-game-section {
     padding: 60px 40px;
     margin-left: calc(50% - 50vw);
@@ -541,25 +528,46 @@
         display: flex;
         flex-direction: column;
     }
-    .game-mechanics-section .section-description {
+    .section-game-mechanics {
+        padding: 60px 0;
+    }
+    .section-game-mechanics h2 {
+        font-size: 2rem;
+    }
+    .section-game-mechanics .lead {
+        font-size: 1.05rem;
         margin-bottom: 40px;
-        font-size: 1rem;
     }
-    .mechanics {
+    .mechanics-blocks {
+        gap: 60px; 
+    }
+    .mechanic-block,
+    .mechanic-block.reverse {
+        flex-direction: column; 
         gap: 30px;
+        padding: 25px;
     }
-    .mechanic-card {
-        padding: 30px;
-        border-radius: 10px;
+
+    .mechanic-visual,
+    .mechanic-info {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
     }
-    .mechanic-card .mechanic-title {
+
+    .mechanic-visual img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .mechanic-info h3 {
         font-size: 1.7rem;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        text-align: center;
     }
-    .mechanic-card .mechanic-description p,
-    .mechanic-card .mechanic-description ul li {
-        font-size: 0.95rem;
+    .mechanic-info p,
+    .mechanic-info ul {
+        text-align: left;
     }
     .section-educational-impact {
         padding: 60px 0;
@@ -614,7 +622,7 @@
 }
 
 @media (max-width: 768px) {
-    .game-hero h1 { /* Ajuste en hero si es afectado */
+    .game-hero h1 {
         font-size: 2.8rem;
     }
     .game-hero h2 {
@@ -654,8 +662,24 @@
     .vision-image-block img{
         max-width: 250px;
     }
+    .mechanics-blocks {
+        gap: 40px;
+    }
+    .mechanic-block {
+        padding: 20px;
+    }
+    .mechanic-info h3 {
+        font-size: 1.5rem;
+    }
+    .mechanic-info p,
+    .mechanic-info ul li {
+        font-size: 0.95rem;
+    }
+    .mechanic-info ul li::before {
+        font-size: 1rem;
+    }
     .impact-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+        grid-template-columns: 1fr; 
     }
     .impact-card {
         padding: 20px;

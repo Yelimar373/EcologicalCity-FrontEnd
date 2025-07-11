@@ -59,9 +59,14 @@
             <p class="lead" data-aos="fade-up"><strong>EcologicalCity</strong> busca sumergir al jugador en una simulación compleja y dinámica donde cada decisión tendrá un peso significativo. Se ha conceptualizado un sistema de juego que reflejará la interdependencia del mundo real, impulsando al jugador a pensar estratégicamente y a largo plazo. Aquí, la meta no será solo construir la ciudad más grande, sino la más <strong>resiliente y sostenible</strong>.</p>
 
             <div class="mechanics-blocks">
-                <div class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
+                <div id="map-alive" class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
                     <div class="mechanic-visual">
-                        <img src="/assets/img/the-game/mechanics/mapa-vivo.webp" alt="Representación de un mapa de ciudad viva con zonas interconectadas, indicando flujos de recursos y población.">
+                        <picture>
+                            <source srcset="/assets/img/the-game/mechanics/mapa-vivo.avif" type="image/avif">
+                            <source srcset="/assets/img/the-game/mechanics/mapa-vivo.webp" type="image/webp">
+                            <source srcset="/assets/img/the-game/mechanics/mapa-vivo.jpg" type="image/png">
+                            <img src="/assets/img/the-game/mechanics/ecosistema-urbano.jpg" alt="Representación de un mapa de ciudad viva con zonas interconectadas, indicando flujos de recursos y población." loading="lazy">
+                        </picture>
                     </div>
                     <div class="mechanic-info">
                         <h3>El Mapa Vivo: Interdependencia Urbana</h3>
@@ -69,9 +74,14 @@
                     </div>
                 </div>
 
-                <div class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
+                <div id="urban-ecosystem" class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
                     <div class="mechanic-visual">
-                        <img src="/assets/img/the-game/mechanics/ecosistema-urbano.webp" alt="Diagrama de edificios interconectados mostrando flujos de producción y consumo de recursos.">
+                        <picture>
+                            <source srcset="/assets/img/the-game/mechanics/ecosistema-urbano.avif" type="image/avif">
+                            <source srcset="/assets/img/the-game/mechanics/ecosistema-urbano.webp" type="image/webp">
+                            <source srcset="/assets/img/the-game/mechanics/ecosistema-urbano.jpg" type="image/png">
+                            <img src="/assets/img/the-game/mechanics/ecosistema-urbano.jpg" alt="Diagrama de edificios interconectados mostrando flujos de producción y consumo de recursos." loading="lazy">
+                        </picture>
                     </div>
                     <div class="mechanic-info">
                         <h3>Ecosistema Urbano: Edificios y Conexiones Estratégicas</h3>
@@ -84,9 +94,14 @@
                     </div>
                 </div>
 
-                <div class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
+                <div id="sustainable-technology" class="mechanic-block" data-aos="fade-up" data-aos-delay="100">
                     <div class="mechanic-visual">
-                        <img src="/assets/img/the-game/mechanics/tecnologia-sostenible.webp" alt="Representación de un árbol tecnológico o nodos de investigación con iconos de energía renovable, transporte verde.">
+                        <picture>
+                            <source srcset="/assets/img/the-game/mechanics/tecnologia-sostenible.avif" type="image/avif">
+                            <source srcset="/assets/img/the-game/mechanics/tecnologia-sostenible.webp" type="image/webp">
+                            <source srcset="/assets/img/the-game/mechanics/tecnologia-sostenible.jpg" type="image/png">
+                            <img src="/assets/img/the-game/mechanics/tecnologia-sostenible.jpg" alt="Representación de un árbol tecnológico o nodos de investigación con iconos de energía renovable, transporte verde." loading="lazy">
+                        </picture>
                     </div>
                     <div class="mechanic-info">
                         <h3>Tecnología y Progreso Sostenible</h3>
@@ -94,9 +109,14 @@
                     </div>
                 </div>
 
-                <div class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
+                <div id="real-consequences" class="mechanic-block reverse" data-aos="fade-up" data-aos-delay="100">
                     <div class="mechanic-visual">
-                        <img src="/assets/img/the-game/mechanics/consecuencias-reales.webp" alt="Ciudad dividida mostrando un lado deteriorado por la contaminación y otro lado próspero y verde.">
+                        <picture>
+                            <source srcset="/assets/img/the-game/mechanics/consecuencias-reales.avif" type="image/avif">
+                            <source srcset="/assets/img/the-game/mechanics/consecuencias-reales.webp" type="image/webp">
+                            <source srcset="/assets/img/the-game/mechanics/consecuencias-reales.jpg" type="image/png">
+                            <img src="/assets/img/the-game/mechanics/consecuencias-reales.jpg" alt="Ciudad dividida mostrando un lado deteriorado por la contaminación y otro lado próspero y verde." loading="lazy">
+                        </picture>
                     </div>
                     <div class="mechanic-info">
                         <h3>Consecuencias Reales: El Impacto de Tus Decisiones</h3>
@@ -129,26 +149,30 @@
 
                     <div class="impact-card card animate-on-scroll">
                         <picture>
-                        <source srcset="/assets/icons/brain/brain.webp" type="image/webp">
-                        <source srcset="/assets/icons/brain/brain.png" type="image/png">
-                        <img src="/assets/icons/brain/brain.png" alt="brain Icon" loading="lazy">
-                    </picture>
+                            <source srcset="/assets/icons/brain/brain.webp" type="image/webp">
+                            <source srcset="/assets/icons/brain/brain.png" type="image/png">
+                            <img src="/assets/icons/brain/brain.png" alt="brain Icon" loading="lazy">
+                        </picture>
                         <h3>Pensamiento Crítico y Sistémico</h3>
                         <p>El juego promoverá la resolución de problemas complejos, la anticipación de consecuencias y la comprensión de cómo diferentes elementos (social, económico, ambiental) interactúan entre sí.</p>
                     </div>
 
                     <div class="impact-card card animate-on-scroll">
-                        <div class="impact-icon">
-                            <img src="/assets/icons/decision.svg" alt="Icono de Toma de Decisiones">
-                        </div>
+                        <picture>
+                            <source srcset="/assets/icons/desicion/desicion.webp" type="image/webp">
+                            <source srcset="/assets/icons/desicion/desicion.png" type="image/png">
+                            <img src="/assets/icons/desicion/desicion.png" alt="Icono de Toma de Decisiones" loading="lazy">
+                        </picture>
                         <h3>Toma de Decisiones Responsable</h3>
                         <p>Cada elección impactará en el bienestar de la ciudad y el planeta, enseñando el valor de la planificación a largo plazo y las decisiones éticas.</p>
                     </div>
 
                     <div class="impact-card card animate-on-scroll">
-                        <div class="impact-icon">
-                            <img src="/assets/icons/empathy.svg" alt="Icono de Empatía">
-                        </div>
+                        <picture>
+                            <!-- <source srcset="/assets/icons/empathy/empathy.webp" type="image/webp"> -->
+                            <source srcset="/assets/icons/empathy/empathy.png" type="image/png">
+                            <img src="/assets/icons/empathy/empathy.png" alt="Icono de Empatía" loading="lazy">
+                        </picture>
                         <h3>Empatía por el Futuro</h3>
                         <p>Los jugadores conectarán de forma personal con el impacto de sus acciones en un entorno simulado, traduciéndose en una mayor conciencia en la vida real.</p>
                     </div>
@@ -178,7 +202,7 @@
         </section>
 
     </main>
-    <%- include('partials/footer', { currentPage: 'the-game', atrribution: '<div> Iconos diseñados por <a href="https://www.flaticon.es/autores/adury5711" title="Adury5711"> Adury5711 </a> & <a href="https://www.flaticon.es/autores/prosymbols-premium" title="Prosymbols Premium"> Prosymbols Premium </a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>' }) %>
+    <%- include('partials/footer', { currentPage: 'the-game', atrribution: '<div> Iconos diseñados por <a href="https://www.flaticon.es/autores/adury5711" title="Adury5711"> Adury5711 </a> & <a href="https://www.flaticon.es/autores/prosymbols-premium" title="Prosymbols Premium"> Prosymbols Premium </a> & <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>' }) %>
     <script src="/js/script.js"></script>
     <script src="js/pages/quizData.js"></script>
     <script src="/js/pages/the-game.js"></script>
